@@ -74,6 +74,40 @@ indicators:
       **對台股**：台灣是全球製造業供應鏈核心，ISM 走向與台灣出口/電子業景氣循環同步性高。
       **注意**：跌破 45 歷史上才與衰退強相關；48–50 的徘徊區間雜訊多。
 
+  - id: us_claims
+    name: 初領失業救濟金
+    tier: 2
+    country: US
+    source: tradingview
+    ai: false                # 週頻，只進表格不做 AI 判讀
+    weekly: true             # 事件 key 保留完整日期，避免同月各週互相覆蓋
+    tv:
+      - {ticker: "ECONOMICS:USIJC"}     # Initial Jobless Claims（千人）
+    direction: higher_is_bad
+    logic: |
+      **傳導機制**：最高頻的勞動市場溫度計（週四晚間，前一週數據）。單週雜訊大，
+      看 **4 週移動平均的趨勢**；連續走升是衰退早期訊號，實用定位是**風險開關**——
+      claims 趨勢走升 + 殖利率曲線 re-steepening → 降 exposure，而不是進出場訊號。
+      **注意**：假期週（感恩節、7/4）與年度季節因子調整期會有假波動；
+      250K 以上才算亮黃燈，200K 上下的區間波動無意義。
+
+  - id: us_pce
+    name: 美國核心 PCE
+    tier: 2
+    country: US
+    source: tradingview
+    tv:
+      - {ticker: "ECONOMICS:USCPCEPIMM"}  # Core PCE Price Index MoM（關鍵數字）
+      - {ticker: "ECONOMICS:USCPCEPIAC"}  # Core PCE Price Index YoY
+    direction: higher_is_bad
+    chart: pce
+    logic: |
+      **傳導機制**：Fed 官方通膨目標（2% 指的是 PCE 不是 CPI）。但 CPI 先公布約兩週，
+      CPI→PCE 的映射市場自己會算，**九成時間 surprise 已被 CPI 吃掉**、反應冷淡。
+      **剩下一成才是戲**：兩者權重背離時（房租在 CPI 占比高、醫療在 PCE 占比高）
+      出現獨立意外，那種日子的反應會補足 CPI 日的定價落差。
+      **判讀**：Core MoM 是唯一重點；月底公布，常與當週其他數據疊在一起，注意歸因。
+
   - id: tw_exports
     name: 台灣出口
     tier: 1

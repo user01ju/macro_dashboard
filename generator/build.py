@@ -88,9 +88,11 @@ def render(events, indicators, charts, tsmc_calls, generated_at):
     # 已公布區塊按（指標, 日期）分組，AI 分析同組共用
     groups, seen = [], {}
     for row in recent:
-        gk = (row["indicator"], row["date_tw"][:10])
+        weekly = by_id.get(row["indicator"], {}).get("weekly")
+        gk = (row["indicator"],) if weekly else (row["indicator"], row["date_tw"][:10])
         if gk not in seen:
-            seen[gk] = {"name": row["name"], "tier": row["tier"], "date": row["date_tw"][:10],
+            seen[gk] = {"name": row["name"], "tier": row["tier"],
+                        "date": "近幾週" if weekly else row["date_tw"][:10],
                         "indicator": row["indicator"], "rows": [],
                         "ai_analysis": row.get("ai_analysis", "")}
             groups.append(seen[gk])

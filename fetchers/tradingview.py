@@ -56,7 +56,9 @@ def fetch(indicators):
             continue
 
         dt = datetime.fromisoformat(row["date"].replace("Z", "+00:00")).astimezone(TPE)
-        ref = (row.get("referenceDate") or "")[:7] or f"{dt:%Y-%m-%d}"
+        # 週頻指標（如初領失業金）ref 要保留到日，不然同月各週會互相覆蓋
+        width = 10 if ind.get("weekly") else 7
+        ref = (row.get("referenceDate") or "")[:width] or f"{dt:%Y-%m-%d}"
         key = f"{ind['id']}|{row['title']}|{ref}"
         unit, scale = row.get("unit"), row.get("scale")
         out[key] = {

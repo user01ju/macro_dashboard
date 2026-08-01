@@ -64,6 +64,15 @@ def fetch_charts():
         print(f"[fred] nfp 失敗: {e}")
 
     try:
+        pce = yoy(_series("PCEPILFE"))[-36:]
+        charts["pce"] = {
+            "labels": [ym for ym, _ in pce],
+            "datasets": [{"label": "核心 PCE YoY %", "data": [v for _, v in pce]}],
+        }
+    except Exception as e:  # noqa: BLE001
+        print(f"[fred] pce 失敗: {e}")
+
+    try:
         ff = _series("DFEDTARU")
         monthly = {}
         for d, v in ff:

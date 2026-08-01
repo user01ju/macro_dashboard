@@ -26,6 +26,8 @@ def run(events, indicators_by_id):
 
     groups = defaultdict(list)  # (indicator, date) -> [(key, event)]
     for key, ev in events.items():
+        if indicators_by_id.get(ev["indicator"], {}).get("ai") is False:
+            continue  # 週頻等高頻指標只進表格，不做 AI 判讀
         if ev.get("actual") and not ev.get("ai_analysis"):
             date = ev.get("date_tw", "")[:10]
             groups[(ev["indicator"], date)].append((key, ev))
