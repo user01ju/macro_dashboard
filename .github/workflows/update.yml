@@ -1,0 +1,53 @@
+name: 總經數據更新
+
+on:
+  schedule:
+    # 每 3 小時；主要公布時段：美 CPI/NFP 12:30/13:30 UTC、ISM 14/15 UTC、
+    # FOMC 18/19 UTC、台灣出口/台積電營收 06-08 UTC
+    # 注意：公開 repo 的 schedule 常大幅延遲，必要時搭外部 cron 走 repository_dispatch
+    - cron: '17 */3 * * *'
+  repository_dispatch:
+    types: [update]
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: 還原歷史狀態（從 gh-pages）
+        run: |
+          mkdir -p output
+          git fetch origin gh-pages 2>/dev/null || true
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            git archive origin/gh-pages | tar -x -C output/ || true
+            echo "狀態已還原"
+          else
+            echo "gh-pages 尚未建立，從頭部署"
+          fi
+
+      - name: 設定 Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安裝套件
+        run: pip install -r requirements.txt
+
+      - name: 執行更新
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python update.py
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          keep_files: false
+          commit_message: 'chore: update macro dashboard'

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>總經數據儀表板</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  :root{--bg:#f7f7f5;--card:#fff;--ink:#1a1a1a;--muted:#777;--line:#e4e4e0;
+        --good:#0a7d33;--bad:#c0392b;--flat:#777;--accent:#2456a4;--est:#a06b00;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.65 -apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif}
+  .wrap{max-width:960px;margin:0 auto;padding:24px 16px 64px}
+  h1{font-size:22px;margin:0 0 4px}
+  h2{font-size:17px;margin:36px 0 12px;border-left:4px solid var(--accent);padding-left:10px}
+  .sub{color:var(--muted);font-size:13px}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:14px}
+  th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#fafaf8;font-weight:600;white-space:nowrap}
+  .tier1{display:inline-block;background:var(--accent);color:#fff;border-radius:3px;
+         font-size:11px;padding:0 6px;margin-right:6px}
+  .tier2{display:inline-block;background:#8a8a8a;color:#fff;border-radius:3px;
+         font-size:11px;padding:0 6px;margin-right:6px}
+  .est{color:var(--est);font-size:12px}
+  .badge{display:inline-block;border-radius:3px;font-size:12px;padding:0 6px;color:#fff}
+  .b-good{background:var(--good)} .b-bad{background:var(--bad)} .b-flat{background:var(--flat)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;
+        padding:14px 16px;margin-bottom:14px}
+  .card h3{margin:0 0 8px;font-size:15px}
+  .ai{background:#f4f7fc;border-left:3px solid var(--accent);padding:10px 12px;
+      margin-top:10px;font-size:14px;white-space:pre-wrap}
+  .ai::before{content:"AI 判讀";display:block;font-size:11px;color:var(--accent);
+              font-weight:700;margin-bottom:4px}
+  details summary{cursor:pointer;font-weight:600;font-size:15px;padding:4px 0}
+  .logic{font-size:14px;color:#333;margin:8px 0}
+  .chartbox{height:220px;margin-top:10px}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  footer{margin-top:48px;color:var(--muted);font-size:12px}
+  @media(max-width:600px){th,td{padding:6px 6px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>總經數據儀表板</h1>
+  <div class="sub">CPI · NFP · FOMC · ISM · 台灣出口 · 台積電｜更新於 {{ generated_at }}（台北時間）</div>
+
+  <h2>未來 {{ 14 }} 天行事曆</h2>
+  {% if upcoming %}
+  <table>
+    <tr><th>日期（台北）</th><th>事件</th><th>預期</th><th>前值</th></tr>
+    {% for ev in upcoming %}
+    <tr>
+      <td class="num">{{ ev.date_tw }}</td>
+      <td><span class="tier{{ ev.tier }}">T{{ ev.tier }}</span>{{ ev.name }}｜{{ ev.title }}
+          {% if ev.estimated %}<span class="est">（預估日）</span>{% endif %}</td>
+      <td class="num">{{ ev.forecast or "–" }}</td>
+      <td class="num">{{ ev.previous or "–" }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}<div class="card">未來兩週沒有追蹤中的數據。</div>{% endif %}
+
+  <h2>近期公布</h2>
+  {% for g in groups %}
+  <div class="card">
+    <h3><span class="tier{{ g.tier }}">T{{ g.tier }}</span>{{ g.name }}
+        <span class="sub">{{ g.date }}</span></h3>
+    <table>
+      <tr><th>項目</th><th>實際</th><th>預期</th><th>前值</th><th>落差</th></tr>
+      {% for r in g.rows %}
+      <tr>
+        <td>{{ r.title }}</td>
+        <td class="num"><strong>{{ r.actual }}</strong></td>
+        <td class="num">{{ r.forecast or "–" }}</td>
+        <td class="num">{{ r.previous or "–" }}</td>
+        <td>
+          {% if r.surprise %}
+            {% set cls = "b-flat" if r.surprise.good is none else ("b-good" if r.surprise.good else "b-bad") %}
+            <span class="badge {{ cls }}">{{ r.surprise.delta }}</span>
+          {% else %}–{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% if g.ai_analysis %}<div class="ai">{{ g.ai_analysis }}</div>{% endif %}
+  </div>
+  {% else %}
+  <div class="card">還沒有已公布的數據（第一次執行後會隨時間累積）。</div>
+  {% endfor %}
+
+  <h2>指標邏輯卡 + 趨勢</h2>
+  {% for ind in indicators %}
+  <div class="card">
+    <details {% if loop.first %}open{% endif %}>
+      <summary><span class="tier{{ ind.tier }}">T{{ ind.tier }}</span>{{ ind.name }}</summary>
+      <div class="logic">{{ ind.logic | md | safe }}</div>
+      {% if ind.chart %}<div class="chartbox"><canvas id="c_{{ ind.chart }}"></canvas></div>{% endif %}
+    </details>
+  </div>
+  {% endfor %}
+
+  <footer>
+    資料源：TradingView 經濟行事曆（預期/實際/前值）· FRED · 財政部關務署（趨勢圖 NTD 序列）·
+    TWSE OpenAPI · FinMind（月營收回補）。台積電法說日期為手動維護。
+    AI 判讀由 Claude（claude-opus-5）自動生成，僅供研究參考。
+  </footer>
+</div>
+<script>
+const CHARTS = {{ charts_json | safe }};
+const palette = ["#2456a4","#c0392b","#0a7d33","#a06b00"];
+for (const [id, cfg] of Object.entries(CHARTS)) {
+  const el = document.getElementById("c_" + id);
+  if (!el) continue;
+  new Chart(el, {
+    type: "line",
+    data: {
+      labels: cfg.labels,
+      datasets: cfg.datasets.map((d, i) => ({
+        label: d.label, data: d.data, borderColor: palette[i % palette.length],
+        backgroundColor: "transparent", pointRadius: 0, borderWidth: 2, spanGaps: true,
+        yAxisID: d.y2 ? "y2" : "y",
+      })),
+    },
+    options: {
+      maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
+      plugins: {legend: {labels: {boxWidth: 12, font: {size: 11}}}},
+      scales: Object.assign(
+        {x: {ticks: {maxTicksLimit: 12, font: {size: 10}}}, y: {ticks: {font: {size: 10}}}},
+        cfg.datasets.some(d => d.y2)
+          ? {y2: {position: "right", grid: {drawOnChartArea: false}, ticks: {font: {size: 10}}}}
+          : {}),
+    },
+  });
+}
+</script>
+</body>
+</html>

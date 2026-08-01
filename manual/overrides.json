@@ -1,0 +1,7 @@
+{
+  "_readme": "手動補值/修正。events 的 key 格式同 events.json（例 'tsmc_rev|2026-07'），非 null 欄位會覆蓋自動值；改 actual 會觸發重新 AI 分析。tsmc_calls 放法說會日期（一季補一次，TSMC IR 頁公告）。",
+  "events": {},
+  "tsmc_calls": [
+    "2026-10-15"
+  ]
+}

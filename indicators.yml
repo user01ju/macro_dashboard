@@ -1,0 +1,120 @@
+# 指標註冊表：新增指標 = 加一段 config（必要時加一個 fetcher source）
+# direction: higher_is_bad | higher_is_good | context（無固定方向，交給邏輯卡與 AI 判讀）
+# source: tradingview | twse_monthly_rev | manual
+# tv: TradingView 行事曆的匹配條件（ticker 優先；沒 ticker 的用 title+country）
+
+indicators:
+  - id: us_cpi
+    name: 美國 CPI
+    tier: 1
+    country: US
+    source: tradingview
+    tv:
+      - {ticker: "ECONOMICS:USIRYY"}    # Inflation Rate YoY
+      - {ticker: "ECONOMICS:USCIR"}     # Core Inflation Rate YoY
+      - {ticker: "ECONOMICS:USIRMM"}    # Inflation Rate MoM
+      - {title: "Core Inflation Rate MoM"}
+    direction: higher_is_bad
+    chart: cpi_yoy
+    logic: |
+      **傳導機制**：CPI → Fed 利率路徑預期 → 折現率 → 股市估值。市場反應的是「vs 預期的落差」，不是絕對值。
+      核心 CPI 月增率（Core MoM）是最關鍵的單一數字：>0.4% 屬鷹派意外，<0.2% 屬鴿派意外。
+      **對台股**：透過美股風險情緒與美元指數間接傳導。鷹派 CPI → 美元走強 → 外資賣壓。
+      **注意**：市場處於「通膨敘事」時反應劇烈；勞動市場敘事主導時同樣的 surprise 反應會小很多。
+
+  - id: us_nfp
+    name: 美國非農就業
+    tier: 1
+    country: US
+    source: tradingview
+    tv:
+      - {ticker: "ECONOMICS:USNFP"}     # Non Farm Payrolls
+      - {ticker: "ECONOMICS:USUR"}      # Unemployment Rate
+      - {ticker: "ECONOMICS:USAHE"}     # Average Hourly Earnings MoM
+    direction: context
+    chart: nfp
+    logic: |
+      **傳導機制**：勞動市場 = Fed 雙重使命的另一半。方向判讀依當下 regime 翻轉——
+      通膨主導期「強數據 = 壞消息」（Fed 不降息）；衰退擔憂期「強數據 = 好消息」（軟著陸）。
+      **看三個數字**：新增就業 vs 預期、失業率變化、平均時薪月增（工資通膨訊號）。
+      三者方向不一致時市場常先劇烈波動再反轉，開盤 30 分鐘的方向不可靠。
+      **對台股**：週五晚間公布，影響週一台股開盤情緒與外資期貨佈局。
+
+  - id: us_fomc
+    name: FOMC 利率決議
+    tier: 1
+    country: US
+    source: tradingview
+    tv:
+      # USINTR ticker 掛在所有 Fed 演講上，必須加 title 過濾
+      - {ticker: "ECONOMICS:USINTR", title: "Fed Interest Rate Decision"}
+      - {ticker: "ECONOMICS:USINTR", title: "Fed Press Conference"}
+      - {ticker: "ECONOMICS:USINTR", title: "FOMC Minutes"}
+    direction: context
+    chart: fedfunds
+    logic: |
+      **傳導機制**：利率決議本身通常已被 Fed funds futures 完全定價，真正動盤的是：
+      ① 聲明措辭變化（vs 上次逐字比對）② 點陣圖（季度 SEP 那四次）③ 記者會 Q&A。
+      **典型型態**：決議公布（14:00 ET）先動一波，記者會（14:30 ET）常反轉。當天走勢隔天反轉的機率也偏高，別急著追。
+      **對台股**：台北時間凌晨 2:00/2:30，直接影響隔日台股開盤。降息循環開啟對電子股估值是大利多。
+
+  - id: us_ism
+    name: ISM 製造業 PMI
+    tier: 2
+    country: US
+    source: tradingview
+    tv:
+      - {ticker: "ECONOMICS:USBCOI"}    # ISM Manufacturing PMI
+    direction: higher_is_good
+    chart: ism
+    logic: |
+      **傳導機制**：50 = 榮枯線。領先實體景氣 3–6 個月，與 S&P 500 盈餘年增高度相關。
+      **重點分項**：新訂單（New Orders）比總指數更領先；Prices Paid 是通膨的前哨站——
+      總指數弱 + Prices Paid 強是最差組合（滯脹訊號）。
+      **對台股**：台灣是全球製造業供應鏈核心，ISM 走向與台灣出口/電子業景氣循環同步性高。
+      **注意**：跌破 45 歷史上才與衰退強相關；48–50 的徘徊區間雜訊多。
+
+  - id: tw_exports
+    name: 台灣出口
+    tier: 1
+    country: TW
+    source: tradingview
+    tv:
+      - {ticker: "ECONOMICS:TWEXPYY"}   # Exports YoY（美元計價，= 財政部新聞稿頭條）
+    direction: higher_is_good
+    chart: tw_exports
+    logic: |
+      **傳導機制**：台股是出口導向市場，出口年增率與加權指數 EPS 直接掛鉤。
+      行事曆數字是**美元計價年增率**（財政部新聞稿頭條）；趨勢圖用關務署新台幣序列，
+      匯率波動大時兩者會有落差。
+      **重點細項**：電子零組件 + 資通訊產品占比過半，這兩項的年增才是台股的有效訊號。
+      **注意**：農曆年月份（1–2 月）要合併看，單月年增失真。
+
+  - id: tsmc_rev
+    name: 台積電月營收
+    tier: 1
+    country: TW
+    source: twse_monthly_rev
+    stock_code: "2330"
+    schedule_day: 10         # 約每月 10 日前公布
+    direction: higher_is_good
+    chart: tsmc_rev
+    logic: |
+      **傳導機制**：台積電權重約占加權指數 35–40%，其月營收本身就是台股的總經指標。
+      月營收年增趨勢 → 法說季度財測達成率 → 外資評價模型。
+      **判讀**：單月波動大（拉貨節奏），看 3 個月移動平均年增趨勢；
+      月營收顯著超前財測隱含區間 → 該季財測上修預期發酵。
+      **連動**：AI 伺服器供應鏈（台達電、緯穎、廣達…）會跟著月營收數字聯動。
+
+  - id: tsmc_call
+    name: 台積電法說會
+    tier: 1
+    country: TW
+    source: manual           # 日期在 manual/overrides.json 的 tsmc_calls，一季補一次
+    direction: context
+    logic: |
+      **傳導機制**：法說會給的資訊層級：當季財測（營收區間/毛利率）> 資本支出 > 產業展望措辭。
+      資本支出上修 = 對長期需求的信心投票，設備股（弘塑、辛耘、萬潤…）先反應。
+      **典型型態**：法說前市場會先押注（buy the rumor），符合預期常見利多出盡；
+      真正的 alpha 在「財測 vs 買方預期（whisper number）」的落差，不是 vs 官方 consensus。
+      **時間**：每季一次，約 1/4/7/10 月中旬，下午台股盤後舉行，影響次日開盤。
