@@ -1,0 +1,296 @@
+{
+ "events": {
+  "us_ism|ISM Manufacturing PMI|2026-06": {
+   "indicator": "us_ism",
+   "ref": "2026-06",
+   "title": "ISM Manufacturing PMI（Jun）",
+   "date_tw": "2026-07-01 22:00",
+   "sort_key": "2026-07-01T22:00:00+08:00",
+   "forecast": "54",
+   "previous": "54",
+   "actual": "53.3",
+   "surprise": {
+    "delta": "-0.7",
+    "verdict": "below",
+    "good": false
+   }
+  },
+  "us_nfp|Non Farm Payrolls|2026-06": {
+   "indicator": "us_nfp",
+   "ref": "2026-06",
+   "title": "Non Farm Payrolls（Jun）",
+   "date_tw": "2026-07-02 20:30",
+   "sort_key": "2026-07-02T20:30:00+08:00",
+   "forecast": "110K",
+   "previous": "129K",
+   "actual": "57K",
+   "surprise": {
+    "delta": "-53K",
+    "verdict": "below",
+    "good": null
+   }
+  },
+  "us_nfp|Average Hourly Earnings MoM|2026-06": {
+   "indicator": "us_nfp",
+   "ref": "2026-06",
+   "title": "Average Hourly Earnings MoM（Jun）",
+   "date_tw": "2026-07-02 20:30",
+   "sort_key": "2026-07-02T20:30:00+08:00",
+   "forecast": "0.3%",
+   "previous": "0.3%",
+   "actual": "0.3%",
+   "surprise": {
+    "delta": "+0",
+    "verdict": "inline",
+    "good": null
+   }
+  },
+  "us_nfp|Unemployment Rate|2026-06": {
+   "indicator": "us_nfp",
+   "ref": "2026-06",
+   "title": "Unemployment Rate（Jun）",
+   "date_tw": "2026-07-02 20:30",
+   "sort_key": "2026-07-02T20:30:00+08:00",
+   "forecast": "4.3%",
+   "previous": "4.3%",
+   "actual": "4.2%",
+   "surprise": {
+    "delta": "-0.1",
+    "verdict": "below",
+    "good": null
+   }
+  },
+  "us_fomc|FOMC Minutes|2026-07-09": {
+   "indicator": "us_fomc",
+   "ref": "2026-07-09",
+   "title": "FOMC Minutes",
+   "date_tw": "2026-07-09 02:00",
+   "sort_key": "2026-07-09T02:00:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
+  },
+  "tw_exports|Exports YoY|2026-06": {
+   "indicator": "tw_exports",
+   "ref": "2026-06",
+   "title": "Exports YoY（Jun）",
+   "date_tw": "2026-07-09 16:00",
+   "sort_key": "2026-07-09T16:00:00+08:00",
+   "forecast": "48.6%",
+   "previous": "51.7%",
+   "actual": "40.3%",
+   "surprise": {
+    "delta": "-8.3",
+    "verdict": "below",
+    "good": false
+   }
+  },
+  "us_cpi|Core Inflation Rate YoY|2026-06": {
+   "indicator": "us_cpi",
+   "ref": "2026-06",
+   "title": "Core Inflation Rate YoY（Jun）",
+   "date_tw": "2026-07-14 20:30",
+   "sort_key": "2026-07-14T20:30:00+08:00",
+   "forecast": "2.8%",
+   "previous": "2.9%",
+   "actual": "2.6%",
+   "surprise": {
+    "delta": "-0.2",
+    "verdict": "below",
+    "good": true
+   }
+  },
+  "us_cpi|Inflation Rate YoY|2026-06": {
+   "indicator": "us_cpi",
+   "ref": "2026-06",
+   "title": "Inflation Rate YoY（Jun）",
+   "date_tw": "2026-07-14 20:30",
+   "sort_key": "2026-07-14T20:30:00+08:00",
+   "forecast": "3.8%",
+   "previous": "4.2%",
+   "actual": "3.5%",
+   "surprise": {
+    "delta": "-0.3",
+    "verdict": "below",
+    "good": true
+   }
+  },
+  "us_cpi|Core Inflation Rate MoM|2026-06": {
+   "indicator": "us_cpi",
+   "ref": "2026-06",
+   "title": "Core Inflation Rate MoM（Jun）",
+   "date_tw": "2026-07-14 20:30",
+   "sort_key": "2026-07-14T20:30:00+08:00",
+   "forecast": "0.2%",
+   "previous": "0.2%",
+   "actual": "0%",
+   "surprise": {
+    "delta": "-0.2",
+    "verdict": "below",
+    "good": true
+   }
+  },
+  "us_cpi|Inflation Rate MoM|2026-06": {
+   "indicator": "us_cpi",
+   "ref": "2026-06",
+   "title": "Inflation Rate MoM（Jun）",
+   "date_tw": "2026-07-14 20:30",
+   "sort_key": "2026-07-14T20:30:00+08:00",
+   "forecast": "-0.1%",
+   "previous": "0.5%",
+   "actual": "-0.4%",
+   "surprise": {
+    "delta": "-0.3",
+    "verdict": "below",
+    "good": true
+   }
+  },
+  "us_fomc|Fed Interest Rate Decision|2026-07": {
+   "indicator": "us_fomc",
+   "ref": "2026-07",
+   "title": "Fed Interest Rate Decision",
+   "date_tw": "2026-07-30 02:00",
+   "sort_key": "2026-07-30T02:00:00+08:00",
+   "forecast": "3.75%",
+   "previous": "3.75%",
+   "actual": "3.75%",
+   "surprise": {
+    "delta": "+0",
+    "verdict": "inline",
+    "good": null
+   }
+  },
+  "us_fomc|Fed Press Conference|2026-07-30": {
+   "indicator": "us_fomc",
+   "ref": "2026-07-30",
+   "title": "Fed Press Conference",
+   "date_tw": "2026-07-30 02:30",
+   "sort_key": "2026-07-30T02:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
+  },
+  "us_ism|ISM Manufacturing PMI|2026-07": {
+   "indicator": "us_ism",
+   "ref": "2026-07",
+   "title": "ISM Manufacturing PMI（Jul）",
+   "date_tw": "2026-08-03 22:00",
+   "sort_key": "2026-08-03T22:00:00+08:00",
+   "forecast": "54",
+   "previous": "53.3",
+   "actual": "",
+   "surprise": null
+  },
+  "tw_exports|Exports YoY|2026-07": {
+   "indicator": "tw_exports",
+   "ref": "2026-07",
+   "title": "Exports YoY（Jul）",
+   "date_tw": "2026-08-07 16:00",
+   "sort_key": "2026-08-07T16:00:00+08:00",
+   "forecast": "",
+   "previous": "40.3",
+   "actual": "",
+   "surprise": null
+  },
+  "us_nfp|Non Farm Payrolls|2026-07": {
+   "indicator": "us_nfp",
+   "ref": "2026-07",
+   "title": "Non Farm Payrolls（Jul）",
+   "date_tw": "2026-08-07 20:30",
+   "sort_key": "2026-08-07T20:30:00+08:00",
+   "forecast": "91K",
+   "previous": "57K",
+   "actual": "",
+   "surprise": null
+  },
+  "us_nfp|Unemployment Rate|2026-07": {
+   "indicator": "us_nfp",
+   "ref": "2026-07",
+   "title": "Unemployment Rate（Jul）",
+   "date_tw": "2026-08-07 20:30",
+   "sort_key": "2026-08-07T20:30:00+08:00",
+   "forecast": "4.3%",
+   "previous": "4.2%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_nfp|Average Hourly Earnings MoM|2026-07": {
+   "indicator": "us_nfp",
+   "ref": "2026-07",
+   "title": "Average Hourly Earnings MoM（Jul）",
+   "date_tw": "2026-08-07 20:30",
+   "sort_key": "2026-08-07T20:30:00+08:00",
+   "forecast": "0.3%",
+   "previous": "0.3%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Inflation Rate YoY|2026-07": {
+   "indicator": "us_cpi",
+   "ref": "2026-07",
+   "title": "Inflation Rate YoY（Jul）",
+   "date_tw": "2026-08-12 20:30",
+   "sort_key": "2026-08-12T20:30:00+08:00",
+   "forecast": "",
+   "previous": "3.5%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Core Inflation Rate MoM|2026-07": {
+   "indicator": "us_cpi",
+   "ref": "2026-07",
+   "title": "Core Inflation Rate MoM（Jul）",
+   "date_tw": "2026-08-12 20:30",
+   "sort_key": "2026-08-12T20:30:00+08:00",
+   "forecast": "",
+   "previous": "0%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Core Inflation Rate YoY|2026-07": {
+   "indicator": "us_cpi",
+   "ref": "2026-07",
+   "title": "Core Inflation Rate YoY（Jul）",
+   "date_tw": "2026-08-12 20:30",
+   "sort_key": "2026-08-12T20:30:00+08:00",
+   "forecast": "",
+   "previous": "2.6%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Inflation Rate MoM|2026-07": {
+   "indicator": "us_cpi",
+   "ref": "2026-07",
+   "title": "Inflation Rate MoM（Jul）",
+   "date_tw": "2026-08-12 20:30",
+   "sort_key": "2026-08-12T20:30:00+08:00",
+   "forecast": "",
+   "previous": "-0.4%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_fomc|FOMC Minutes|2026-08-20": {
+   "indicator": "us_fomc",
+   "ref": "2026-08-20",
+   "title": "FOMC Minutes",
+   "date_tw": "2026-08-20 02:00",
+   "sort_key": "2026-08-20T02:00:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
+  },
+  "tsmc_rev|2026-06": {
+   "indicator": "tsmc_rev",
+   "title": "月營收 2026-06",
+   "date_tw": "2026-06",
+   "sort_key": "2026-06-27",
+   "forecast": "",
+   "previous": "+30.1% YoY",
+   "actual": "+67.9% YoY（4,427 億）",
+   "surprise": null
+  }
+ }
+}

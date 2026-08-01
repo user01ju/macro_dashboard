@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>總經數據儀表板</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  :root{--bg:#f7f7f5;--card:#fff;--ink:#1a1a1a;--muted:#777;--line:#e4e4e0;
+        --good:#0a7d33;--bad:#c0392b;--flat:#777;--accent:#2456a4;--est:#a06b00;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.65 -apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif}
+  .wrap{max-width:960px;margin:0 auto;padding:24px 16px 64px}
+  h1{font-size:22px;margin:0 0 4px}
+  h2{font-size:17px;margin:36px 0 12px;border-left:4px solid var(--accent);padding-left:10px}
+  .sub{color:var(--muted);font-size:13px}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:14px}
+  th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#fafaf8;font-weight:600;white-space:nowrap}
+  .tier1{display:inline-block;background:var(--accent);color:#fff;border-radius:3px;
+         font-size:11px;padding:0 6px;margin-right:6px}
+  .tier2{display:inline-block;background:#8a8a8a;color:#fff;border-radius:3px;
+         font-size:11px;padding:0 6px;margin-right:6px}
+  .est{color:var(--est);font-size:12px}
+  .badge{display:inline-block;border-radius:3px;font-size:12px;padding:0 6px;color:#fff}
+  .b-good{background:var(--good)} .b-bad{background:var(--bad)} .b-flat{background:var(--flat)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;
+        padding:14px 16px;margin-bottom:14px}
+  .card h3{margin:0 0 8px;font-size:15px}
+  .ai{background:#f4f7fc;border-left:3px solid var(--accent);padding:10px 12px;
+      margin-top:10px;font-size:14px;white-space:pre-wrap}
+  .ai::before{content:"AI 判讀";display:block;font-size:11px;color:var(--accent);
+              font-weight:700;margin-bottom:4px}
+  details summary{cursor:pointer;font-weight:600;font-size:15px;padding:4px 0}
+  .logic{font-size:14px;color:#333;margin:8px 0}
+  .chartbox{height:220px;margin-top:10px}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  footer{margin-top:48px;color:var(--muted);font-size:12px}
+  @media(max-width:600px){th,td{padding:6px 6px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>總經數據儀表板</h1>
+  <div class="sub">CPI · NFP · FOMC · ISM · 台灣出口 · 台積電｜更新於 2026-08-01 17:34（台北時間）</div>
+
+  <h2>未來 14 天行事曆</h2>
+  
+  <table>
+    <tr><th>日期（台北）</th><th>事件</th><th>預期</th><th>前值</th></tr>
+    
+    <tr>
+      <td class="num">2026-08-03 22:00</td>
+      <td><span class="tier2">T2</span>ISM 製造業 PMI｜ISM Manufacturing PMI（Jul）
+          </td>
+      <td class="num">54</td>
+      <td class="num">53.3</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-07 16:00</td>
+      <td><span class="tier1">T1</span>台灣出口｜Exports YoY（Jul）
+          </td>
+      <td class="num">–</td>
+      <td class="num">40.3</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-07 20:30</td>
+      <td><span class="tier1">T1</span>美國非農就業｜Non Farm Payrolls（Jul）
+          </td>
+      <td class="num">91K</td>
+      <td class="num">57K</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-07 20:30</td>
+      <td><span class="tier1">T1</span>美國非農就業｜Unemployment Rate（Jul）
+          </td>
+      <td class="num">4.3%</td>
+      <td class="num">4.2%</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-07 20:30</td>
+      <td><span class="tier1">T1</span>美國非農就業｜Average Hourly Earnings MoM（Jul）
+          </td>
+      <td class="num">0.3%</td>
+      <td class="num">0.3%</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-10</td>
+      <td><span class="tier1">T1</span>台積電月營收｜7 月數據
+          <span class="est">（預估日）</span></td>
+      <td class="num">–</td>
+      <td class="num">–</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-12 20:30</td>
+      <td><span class="tier1">T1</span>美國 CPI｜Inflation Rate YoY（Jul）
+          </td>
+      <td class="num">–</td>
+      <td class="num">3.5%</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-12 20:30</td>
+      <td><span class="tier1">T1</span>美國 CPI｜Core Inflation Rate MoM（Jul）
+          </td>
+      <td class="num">–</td>
+      <td class="num">0%</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-12 20:30</td>
+      <td><span class="tier1">T1</span>美國 CPI｜Core Inflation Rate YoY（Jul）
+          </td>
+      <td class="num">–</td>
+      <td class="num">2.6%</td>
+    </tr>
+    
+    <tr>
+      <td class="num">2026-08-12 20:30</td>
+      <td><span class="tier1">T1</span>美國 CPI｜Inflation Rate MoM（Jul）
+          </td>
+      <td class="num">–</td>
+      <td class="num">-0.4%</td>
+    </tr>
+    
+  </table>
+  
+
+  <h2>近期公布</h2>
+  
+  <div class="card">
+    <h3><span class="tier1">T1</span>FOMC 利率決議
+        <span class="sub">2026-07-30</span></h3>
+    <table>
+      <tr><th>項目</th><th>實際</th><th>預期</th><th>前值</th><th>落差</th></tr>
+      
+      <tr>
+        <td>Fed Interest Rate Decision</td>
+        <td class="num"><strong>3.75%</strong></td>
+        <td class="num">3.75%</td>
+        <td class="num">3.75%</td>
+        <td>
+          
+            
+            <span class="badge b-flat">+0</span>
+          
+        </td>
+      </tr>
+      
+    </table>
+    
+  </div>
+  
+  <div class="card">
+    <h3><span class="tier1">T1</span>美國 CPI
+        <span class="sub">2026-07-14</span></h3>
+    <table>
+      <tr><th>項目</th><th>實際</th><th>預期</th><th>前值</th><th>落差</th></tr>
+      
+      <tr>
+        <td>Core Inflation Rate YoY（Jun）</td>
+        <td class="num"><strong>2.6%</strong></td>
+        <td class="num">2.8%</td>
+        <td class="num">2.9%</td>
+        <td>
+          
+            
+            <span class="badge b-good">-0.2</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Inflation Rate YoY（Jun）</td>
+        <td class="num"><strong>3.5%</strong></td>
+        <td class="num">3.8%</td>
+        <td class="num">4.2%</td>
+        <td>
+          
+            
+            <span class="badge b-good">-0.3</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Core Inflation Rate MoM（Jun）</td>
+        <td class="num"><strong>0%</strong></td>
+        <td class="num">0.2%</td>
+        <td class="num">0.2%</td>
+        <td>
+          
+            
+            <span class="badge b-good">-0.2</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Inflation Rate MoM（Jun）</td>
+        <td class="num"><strong>-0.4%</strong></td>
+        <td class="num">-0.1%</td>
+        <td class="num">0.5%</td>
+        <td>
+          
+            
+            <span class="badge b-good">-0.3</span>
+          
+        </td>
+      </tr>
+      
+    </table>
+    
+  </div>
+  
+  <div class="card">
+    <h3><span class="tier1">T1</span>台灣出口
+        <span class="sub">2026-07-09</span></h3>
+    <table>
+      <tr><th>項目</th><th>實際</th><th>預期</th><th>前值</th><th>落差</th></tr>
+      
+      <tr>
+        <td>Exports YoY（Jun）</td>
+        <td class="num"><strong>40.3%</strong></td>
+        <td class="num">48.6%</td>
+        <td class="num">51.7%</td>
+        <td>
+          
+            
+            <span class="badge b-bad">-8.3</span>
+          
+        </td>
+      </tr>
+      
+    </table>
+    
+  </div>
+  
+  <div class="card">
+    <h3><span class="tier1">T1</span>美國非農就業
+        <span class="sub">2026-07-02</span></h3>
+    <table>
+      <tr><th>項目</th><th>實際</th><th>預期</th><th>前值</th><th>落差</th></tr>
+      
+      <tr>
+        <td>Non Farm Payrolls（Jun）</td>
+        <td class="num"><strong>57K</strong></td>
+        <td class="num">110K</td>
+        <td class="num">129K</td>
+        <td>
+          
+            
+            <span class="badge b-flat">-53K</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Average Hourly Earnings MoM（Jun）</td>
+        <td class="num"><strong>0.3%</strong></td>
+        <td class="num">0.3%</td>
+        <td class="num">0.3%</td>
+        <td>
+          
+            
+            <span class="badge b-flat">+0</span>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Unemployment Rate（Jun）</td>
+        <td class="num"><strong>4.2%</strong></td>
+        <td class="num">4.3%</td>
+        <td class="num">4.3%</td>
+        <td>
+          
+            
+            <span class="badge b-flat">-0.1</span>
+          
+        </td>
+      </tr>
+      
+    </table>
+    
+  </div>
+  
+  <div class="card">
+    <h3><span class="tier2">T2</span>ISM 製造業 PMI
+        <span class="sub">2026-07-01</span></h3>
+    <table>
+      <tr><th>項目</th><th>實際</th><th>預期</th><th>前值</th><th>落差</th></tr>
+      
+      <tr>
+        <td>ISM Manufacturing PMI（Jun）</td>
+        <td class="num"><strong>53.3</strong></td>
+        <td class="num">54</td>
+        <td class="num">54</td>
+        <td>
+          
+            
+            <span class="badge b-bad">-0.7</span>
+          
+        </td>
+      </tr>
+      
+    </table>
+    
+  </div>
+  
+  <div class="card">
+    <h3><span class="tier1">T1</span>台積電月營收
+        <span class="sub">2026-06</span></h3>
+    <table>
+      <tr><th>項目</th><th>實際</th><th>預期</th><th>前值</th><th>落差</th></tr>
+      
+      <tr>
+        <td>月營收 2026-06</td>
+        <td class="num"><strong>+67.9% YoY（4,427 億）</strong></td>
+        <td class="num">–</td>
+        <td class="num">+30.1% YoY</td>
+        <td>
+          –
+        </td>
+      </tr>
+      
+    </table>
+    
+  </div>
+  
+
+  <h2>指標邏輯卡 + 趨勢</h2>
+  
+  <div class="card">
+    <details open>
+      <summary><span class="tier1">T1</span>美國 CPI</summary>
+      <div class="logic"><strong>傳導機制</strong>：CPI → Fed 利率路徑預期 → 折現率 → 股市估值。市場反應的是「vs 預期的落差」，不是絕對值。<br>核心 CPI 月增率（Core MoM）是最關鍵的單一數字：&gt;0.4% 屬鷹派意外，&lt;0.2% 屬鴿派意外。<br><strong>對台股</strong>：透過美股風險情緒與美元指數間接傳導。鷹派 CPI → 美元走強 → 外資賣壓。<br><strong>注意</strong>：市場處於「通膨敘事」時反應劇烈；勞動市場敘事主導時同樣的 surprise 反應會小很多。<br></div>
+      <div class="chartbox"><canvas id="c_cpi_yoy"></canvas></div>
+    </details>
+  </div>
+  
+  <div class="card">
+    <details >
+      <summary><span class="tier1">T1</span>美國非農就業</summary>
+      <div class="logic"><strong>傳導機制</strong>：勞動市場 = Fed 雙重使命的另一半。方向判讀依當下 regime 翻轉——<br>通膨主導期「強數據 = 壞消息」（Fed 不降息）；衰退擔憂期「強數據 = 好消息」（軟著陸）。<br><strong>看三個數字</strong>：新增就業 vs 預期、失業率變化、平均時薪月增（工資通膨訊號）。<br>三者方向不一致時市場常先劇烈波動再反轉，開盤 30 分鐘的方向不可靠。<br><strong>對台股</strong>：週五晚間公布，影響週一台股開盤情緒與外資期貨佈局。<br></div>
+      <div class="chartbox"><canvas id="c_nfp"></canvas></div>
+    </details>
+  </div>
+  
+  <div class="card">
+    <details >
+      <summary><span class="tier1">T1</span>FOMC 利率決議</summary>
+      <div class="logic"><strong>傳導機制</strong>：利率決議本身通常已被 Fed funds futures 完全定價，真正動盤的是：<br>① 聲明措辭變化（vs 上次逐字比對）② 點陣圖（季度 SEP 那四次）③ 記者會 Q&amp;A。<br><strong>典型型態</strong>：決議公布（14:00 ET）先動一波，記者會（14:30 ET）常反轉。當天走勢隔天反轉的機率也偏高，別急著追。<br><strong>對台股</strong>：台北時間凌晨 2:00/2:30，直接影響隔日台股開盤。降息循環開啟對電子股估值是大利多。<br></div>
+      <div class="chartbox"><canvas id="c_fedfunds"></canvas></div>
+    </details>
+  </div>
+  
+  <div class="card">
+    <details >
+      <summary><span class="tier2">T2</span>ISM 製造業 PMI</summary>
+      <div class="logic"><strong>傳導機制</strong>：50 = 榮枯線。領先實體景氣 3–6 個月，與 S&amp;P 500 盈餘年增高度相關。<br><strong>重點分項</strong>：新訂單（New Orders）比總指數更領先；Prices Paid 是通膨的前哨站——<br>總指數弱 + Prices Paid 強是最差組合（滯脹訊號）。<br><strong>對台股</strong>：台灣是全球製造業供應鏈核心，ISM 走向與台灣出口/電子業景氣循環同步性高。<br><strong>注意</strong>：跌破 45 歷史上才與衰退強相關；48–50 的徘徊區間雜訊多。<br></div>
+      <div class="chartbox"><canvas id="c_ism"></canvas></div>
+    </details>
+  </div>
+  
+  <div class="card">
+    <details >
+      <summary><span class="tier1">T1</span>台灣出口</summary>
+      <div class="logic"><strong>傳導機制</strong>：台股是出口導向市場，出口年增率與加權指數 EPS 直接掛鉤。<br>行事曆數字是<strong>美元計價年增率</strong>（財政部新聞稿頭條）；趨勢圖用關務署新台幣序列，<br>匯率波動大時兩者會有落差。<br><strong>重點細項</strong>：電子零組件 + 資通訊產品占比過半，這兩項的年增才是台股的有效訊號。<br><strong>注意</strong>：農曆年月份（1–2 月）要合併看，單月年增失真。<br></div>
+      <div class="chartbox"><canvas id="c_tw_exports"></canvas></div>
+    </details>
+  </div>
+  
+  <div class="card">
+    <details >
+      <summary><span class="tier1">T1</span>台積電月營收</summary>
+      <div class="logic"><strong>傳導機制</strong>：台積電權重約占加權指數 35–40%，其月營收本身就是台股的總經指標。<br>月營收年增趨勢 → 法說季度財測達成率 → 外資評價模型。<br><strong>判讀</strong>：單月波動大（拉貨節奏），看 3 個月移動平均年增趨勢；<br>月營收顯著超前財測隱含區間 → 該季財測上修預期發酵。<br><strong>連動</strong>：AI 伺服器供應鏈（台達電、緯穎、廣達…）會跟著月營收數字聯動。<br></div>
+      <div class="chartbox"><canvas id="c_tsmc_rev"></canvas></div>
+    </details>
+  </div>
+  
+  <div class="card">
+    <details >
+      <summary><span class="tier1">T1</span>台積電法說會</summary>
+      <div class="logic"><strong>傳導機制</strong>：法說會給的資訊層級：當季財測（營收區間/毛利率）&gt; 資本支出 &gt; 產業展望措辭。<br>資本支出上修 = 對長期需求的信心投票，設備股（弘塑、辛耘、萬潤…）先反應。<br><strong>典型型態</strong>：法說前市場會先押注（buy the rumor），符合預期常見利多出盡；<br>真正的 alpha 在「財測 vs 買方預期（whisper number）」的落差，不是 vs 官方 consensus。<br><strong>時間</strong>：每季一次，約 1/4/7/10 月中旬，下午台股盤後舉行，影響次日開盤。<br></div>
+      
+    </details>
+  </div>
+  
+
+  <footer>
+    資料源：TradingView 經濟行事曆（預期/實際/前值）· FRED · 財政部關務署（趨勢圖 NTD 序列）·
+    TWSE OpenAPI · FinMind（月營收回補）。台積電法說日期為手動維護。
+    AI 判讀由 Claude（claude-opus-5）自動生成，僅供研究參考。
+  </footer>
+</div>
+<script>
+const CHARTS = {"cpi_yoy": {"labels": ["2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"], "datasets": [{"label": "CPI YoY %", "data": [3.1, 3.3, 3.7, 3.7, 3.3, 3.1, 3.3, 3.1, 3.2, 3.5, 3.4, 3.2, 3.0, 2.9, 2.6, 2.4, 2.6, 2.7, 2.9, 3.0, 2.8, 2.4, 2.3, 2.4, 2.7, 2.7, 2.9, 3.0, 2.7, 2.7, 2.4, 2.4, 3.3, 3.8, 4.2, 3.5]}, {"label": "核心 CPI YoY %", "data": [4.9, 4.7, 4.4, 4.1, 4.0, 4.0, 3.9, 3.9, 3.8, 3.8, 3.6, 3.4, 3.3, 3.2, 3.3, 3.3, 3.3, 3.3, 3.2, 3.3, 3.1, 2.8, 2.8, 2.8, 2.9, 3.1, 3.1, 3.0, 2.6, 2.6, 2.5, 2.5, 2.6, 2.7, 2.8, 2.6]}]}, "nfp": {"labels": ["2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"], "datasets": [{"label": "新增非農就業 (千人)", "data": [163, 218, 156, 159, 127, 154, 175, 206, 228, 64, 78, 87, 53, 9, 155, 33, 134, 237, -48, 42, 67, 108, 13, -20, 64, -70, 76, -140, 41, -17, 160, -156, 214, 148, 129, 57]}, {"label": "失業率 %", "data": [3.5, 3.7, 3.7, 3.9, 3.7, 3.8, 3.7, 3.9, 3.9, 3.9, 3.9, 4.1, 4.2, 4.2, 4.1, 4.1, 4.2, 4.1, 4.0, 4.2, 4.2, 4.2, 4.3, 4.1, 4.3, 4.3, 4.4, null, 4.5, 4.4, 4.3, 4.4, 4.3, 4.3, 4.3, 4.2], "y2": true}]}, "fedfunds": {"labels": ["2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07"], "datasets": [{"label": "Fed 目標利率上緣 %", "data": [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.5, 0.5, 1.0, 1.75, 2.5, 2.5, 3.25, 3.25, 4.0, 4.5, 4.5, 4.75, 5.0, 5.0, 5.25, 5.25, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.0, 5.0, 4.75, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.25, 4.0, 4.0, 3.75, 3.75, 3.75, 3.75, 3.75, 3.75, 3.75, 3.75]}]}, "tw_exports": {"labels": ["2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05"], "datasets": [{"label": "出口 YoY %（NTD）", "data": [-20.3, -6.9, -2.1, 7.5, -3.0, 5.0, 14.6, 19.7, 5.2, 22.7, 9.9, 9.1, 29.8, 8.1, 20.3, 4.9, 7.6, 9.4, 12.7, 10.3, 37.3, 23.4, 33.1, 32.4, 23.5, 27.5, 22.4, 27.0, 40.5, 50.1, 38.4, 62.9, 16.2, 55.8, 34.6, 54.6]}]}, "tsmc_rev": {"labels": ["2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"], "datasets": [{"label": "月營收 YoY %", "data": [-4.9, -13.5, -13.4, 15.6, -7.5, -8.5, 7.8, 11.3, 34.3, 59.6, 30.1, 32.9, 44.7, 33.0, 39.6, 29.2, 34.0, 57.8, 35.9, 43.2, 46.5, 48.1, 39.6, 26.8, 25.8, 33.8, 31.4, 17.0, 24.4, 20.4, 36.8, 22.2, 45.2, 17.5, 30.1, 67.9]}]}, "ism": {"labels": ["2026-06"], "datasets": [{"label": "ISM 製造業 PMI", "data": [53.3]}]}};
+const palette = ["#2456a4","#c0392b","#0a7d33","#a06b00"];
+for (const [id, cfg] of Object.entries(CHARTS)) {
+  const el = document.getElementById("c_" + id);
+  if (!el) continue;
+  new Chart(el, {
+    type: "line",
+    data: {
+      labels: cfg.labels,
+      datasets: cfg.datasets.map((d, i) => ({
+        label: d.label, data: d.data, borderColor: palette[i % palette.length],
+        backgroundColor: "transparent", pointRadius: 0, borderWidth: 2, spanGaps: true,
+        yAxisID: d.y2 ? "y2" : "y",
+      })),
+    },
+    options: {
+      maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
+      plugins: {legend: {labels: {boxWidth: 12, font: {size: 11}}}},
+      scales: Object.assign(
+        {x: {ticks: {maxTicksLimit: 12, font: {size: 10}}}, y: {ticks: {font: {size: 10}}}},
+        cfg.datasets.some(d => d.y2)
+          ? {y2: {position: "right", grid: {drawOnChartArea: false}, ticks: {font: {size: 10}}}}
+          : {}),
+    },
+  });
+}
+</script>
+</body>
+</html>
