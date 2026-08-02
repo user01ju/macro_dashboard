@@ -1,0 +1,56 @@
+name: 資料交叉驗證
+
+# Tier B（FRED / TWSE 交叉源）每日一次。這個 workflow 紅了不影響資料更新與部署，
+# 只代表「TradingView 餵的數字跟官方源對不起來」需要人看一眼。
+# 順便把 Tier A 對 gh-pages 上「實際部署中」的狀態再跑一次（零外部呼叫、零成本），
+# 這樣連「macro_update 很久沒跑成功、線上頁面已凍住」也會被 page-generated-freshness 抓到。
+on:
+  schedule:
+    # 台北 23:30／UTC 15:30：晚於當天 UTC 14:17 那輪資料更新，
+    # 也晚於美國 CPI/NFP（12:30–13:30 UTC）與 TWSE 月營收公告。
+    - cron: '30 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: 還原線上狀態（從 gh-pages）
+        run: |
+          mkdir -p output
+          git fetch origin gh-pages 2>/dev/null || true
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            git archive origin/gh-pages | tar -x -C output/ || true
+            echo "狀態已還原"
+          else
+            echo "gh-pages 尚未建立，驗證會全部 SKIP"
+          fi
+
+      - name: 設定 Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安裝套件
+        run: pip install -r requirements.txt
+
+      - name: 執行驗證
+        run: |
+          set +e
+          python verify.py --tier all
+          code=$?
+          set -e
+          if [ "$code" -eq 1 ]; then
+            echo "::error::驗證有 FAIL（詳見上方 [FAIL] 行）"
+            exit 1
+          fi
+          if [ "$code" -eq 2 ]; then
+            echo "::warning::驗證有 WARN（不算失敗，詳見上方 [WARN] 行）"
+          fi

@@ -10,6 +10,14 @@ on:
     types: [update]
   workflow_dispatch:
 
+# 三個觸發源（排程 / repository_dispatch / 手動）可能撞車：兩個 run 從同一個
+# gh-pages commit 還原 output/，後完成的會用較舊的 base 覆蓋部署，把已寫入的
+# analyzed_at 蓋掉 → 下一輪重打 Claude API 燒錢，且完全無聲。
+# cancel-in-progress 必須是 false：update.py 在 save_json 之間被砍會留下半寫狀態。
+concurrency:
+  group: macro-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -43,6 +51,20 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python update.py
+
+      - name: Tier A 資料驗證（FAIL 擋部署）
+        run: |
+          set +e
+          python verify.py --tier a
+          code=$?
+          set -e
+          if [ "$code" -eq 1 ]; then
+            echo "::error::Tier A 驗證有 FAIL，中止部署（詳見上方 [FAIL] 行）"
+            exit 1
+          fi
+          if [ "$code" -eq 2 ]; then
+            echo "::warning::Tier A 有 WARN，不擋部署（詳見上方 [WARN] 行）"
+          fi
 
       - name: 部署到 GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

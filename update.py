@@ -53,6 +53,7 @@ def apply_overrides(events, overrides):
             if fields.get(f):
                 if f == "actual" and fields[f] != target.get("actual"):
                     target.pop("ai_analysis", None)  # 換了實際值就重新分析
+                    target.pop("analyzed_at", None)  # 時間戳也要清，否則指向已作廢的分析
                 target[f] = fields[f]
 
 
