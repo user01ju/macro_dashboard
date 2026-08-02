@@ -10,6 +10,16 @@ on:
     # 也晚於美國 CPI/NFP（12:30–13:30 UTC）與 TWSE 月營收公告。
     - cron: '30 15 * * *'
   workflow_dispatch:
+    inputs:
+      force_fail:
+        description: '注入一條必定 FAIL 的檢查，用來驗證告警管道會不會寄信'
+        type: boolean
+        default: false
+  repository_dispatch:
+    # 讓外部 cron（或手動打 API）也能觸發，並可帶 client_payload.force_fail=1。
+    # 這是刻意的：GitHub 的失敗通知行為在 schedule / workflow_dispatch /
+    # repository_dispatch 三種事件下不見得一樣，要能分別驗證。
+    types: [verify]
 
 permissions:
   contents: read
@@ -42,6 +52,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 執行驗證
+        env:
+          VERIFY_FORCE_FAIL: ${{ (github.event.inputs.force_fail == 'true' || github.event.client_payload.force_fail == '1') && '1' || '' }}
         run: |
           set +e
           python verify.py --tier all

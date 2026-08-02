@@ -9,6 +9,11 @@ on:
   repository_dispatch:
     types: [update]
   workflow_dispatch:
+    inputs:
+      force_fail:
+        description: '注入一條必定 FAIL 的檢查，驗證告警管道並確認 FAIL 真的擋得住部署'
+        type: boolean
+        default: false
 
 # 三個觸發源（排程 / repository_dispatch / 手動）可能撞車：兩個 run 從同一個
 # gh-pages commit 還原 output/，後完成的會用較舊的 base 覆蓋部署，把已寫入的
@@ -53,6 +58,8 @@ jobs:
         run: python update.py
 
       - name: Tier A 資料驗證（FAIL 擋部署）
+        env:
+          VERIFY_FORCE_FAIL: ${{ (github.event.inputs.force_fail == 'true' || github.event.client_payload.force_fail == '1') && '1' || '' }}
         run: |
           set +e
           python verify.py --tier a

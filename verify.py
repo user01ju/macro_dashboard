@@ -14,6 +14,7 @@ exit code：0 全過（或只有 SKIP）／1 至少一條 FAIL／2 沒 FAIL 但�
 """
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -778,6 +779,9 @@ def main(argv=None):
     ap.add_argument("--tier", choices=["a", "b", "all"], default="all")
     ap.add_argument("--sources", default=None,
                     help=f"覆蓋 Tier B 的來源輪替（逗號分隔，可選：{','.join(TIER_B_SOURCES)}）")
+    ap.add_argument("--force-fail", action="store_true",
+                    help="注入一條必定 FAIL 的檢查，用來驗證告警管道會不會寄信"
+                         "（也可設環境變數 VERIFY_FORCE_FAIL=1）")
     args = ap.parse_args(argv)
 
     sources = (args.sources.split(",") if args.sources
@@ -789,6 +793,18 @@ def main(argv=None):
         checks += CHECKS_A
     if args.tier in ("b", "all"):
         checks += CHECKS_B
+
+    # 告警管道自我測試：注入一條必定 FAIL，用來確認
+    # 「FAIL → exit 1 → workflow 紅 → GitHub 寄信」這條路徑真的通。
+    # 這是整套驗證的單點故障——不寄信的話所有檢查都是白寫的，而它平常沒有任何
+    # 訊號會告訴你它壞了（通知設定被改、email 變更、GitHub 行為調整都是無聲的）。
+    # opt-in，預設不啟用；刻意留著不拆，之後想重驗隨時 dispatch 一次即可。
+    if args.force_fail or os.environ.get("VERIFY_FORCE_FAIL", "").lower() in ("1", "true", "yes"):
+        checks = list(checks) + [(
+            "force-fail",
+            lambda _ctx: (FAIL, "人為注入的失敗，用於驗證告警管道是否真的會寄信。"
+                                "看到這行代表驗證流程本身正常運作。"),
+        )]
 
     counts = {PASS: 0, FAIL: 0, WARN: 0, SKIP: 0}
     for cid, fn in checks:

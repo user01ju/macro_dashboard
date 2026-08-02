@@ -102,6 +102,32 @@ exit code：`0` 全過（或只有 SKIP）／`1` 至少一條 FAIL／`2` 沒 FAI
 
 **② GitHub 會在 repo 連續 60 天沒有 commit 活動後自動停用 scheduled workflow。** 本 repo 是純資料更新、原始碼可能好幾個月不動，很容易踩到。踩到時 `macro_update.yml` 和 `verify.yml` 會**一起**被停用，所以「用 verify.yml 監控 macro_update 有沒有在跑」這招在這個失效模式下沒用。`page-generated-freshness`（24 小時門檻）能在「排程還活著但 update 一直失敗」時亮，但擋不了排程整個被停。真正的解是掛外部 cron 打 `repository_dispatch`（不受 60 天規則影響），順便讓那個外部 cron 也打一發到 verify.yml。
 
-## ⚠️ 未驗證的前提
+## 告警管道自我測試
 
-整套的告警依賴「FAIL → exit 1 → workflow 紅 → GitHub 寄信」。**這條路徑還沒實測過**，而且本 repo 也走 `repository_dispatch`——GitHub 的失敗通知是綁 scheduled run 的，dispatch 觸發的失敗會不會寄信未確認。不寄信的話這些檢查全是白寫的。
+整套的告警依賴「FAIL → exit 1 → workflow 紅 → GitHub 寄信」。這是**單點故障**：不寄信的話上面所有檢查都是白寫的，而它平常沒有任何訊號會告訴你它壞了（通知設定被改、email 變更、GitHub 行為調整，都是無聲的）。
+
+所以 `verify.py` 留了一個 opt-in 開關，注入一條必定 FAIL 的 `force-fail` 檢查：
+
+```bash
+python verify.py --tier a --force-fail     # 或 VERIFY_FORCE_FAIL=1
+```
+
+兩個 workflow 都接了觸發路徑，因為 GitHub 的失敗通知行為在不同事件下不見得一樣，要能分別驗證：
+
+```bash
+# workflow_dispatch
+gh workflow run --repo user01ju/macro_dashboard verify.yml -f force_fail=true
+gh workflow run --repo user01ju/macro_dashboard macro_update.yml -f force_fail=true
+
+# repository_dispatch（模擬外部 cron 那條路徑）
+gh api repos/user01ju/macro_dashboard/dispatches -f event_type=verify -f 'client_payload[force_fail]=1'
+gh api repos/user01ju/macro_dashboard/dispatches -f event_type=update -f 'client_payload[force_fail]=1'
+
+# schedule 沒辦法手動催，等自然跑一輪（每 3 小時）
+```
+
+`macro_update.yml` 那條同時也驗「FAIL 真的擋得住部署」。失敗的那一輪會跳過部署，無害——下一輪排程會補回來。
+
+**這個開關刻意留著不拆**：之後改了通知設定、換 email、或只是想確認告警還活著，dispatch 一次就知道，不用再動程式碼。
+
+先決條件：GitHub → Settings → Notifications → Actions 的 email 通知要是開的。整個關掉的話怎麼測都收不到。
