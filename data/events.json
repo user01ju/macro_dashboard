@@ -226,7 +226,7 @@
    "title": "Non Farm Payrolls（Jul）",
    "date_tw": "2026-08-07 20:30",
    "sort_key": "2026-08-07T20:30:00+08:00",
-   "forecast": "83K",
+   "forecast": "80K",
    "previous": "57K",
    "actual": "",
    "surprise": null
@@ -237,7 +237,7 @@
    "title": "Unemployment Rate（Jul）",
    "date_tw": "2026-08-07 20:30",
    "sort_key": "2026-08-07T20:30:00+08:00",
-   "forecast": "4.3%",
+   "forecast": "4.2%",
    "previous": "4.2%",
    "actual": "",
    "surprise": null
@@ -484,7 +484,7 @@
    "title": "Initial Jobless Claims（Aug/01）",
    "date_tw": "2026-08-06 20:30",
    "sort_key": "2026-08-06T20:30:00+08:00",
-   "forecast": "201K",
+   "forecast": "202K",
    "previous": "197K",
    "actual": "",
    "surprise": null
