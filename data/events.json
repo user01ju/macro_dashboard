@@ -215,8 +215,8 @@
    "title": "Exports YoY（Jul）",
    "date_tw": "2026-08-07 16:00",
    "sort_key": "2026-08-07T16:00:00+08:00",
-   "forecast": "",
-   "previous": "40.3",
+   "forecast": "40.7%",
+   "previous": "40.3%",
    "actual": "",
    "surprise": null
   },
@@ -259,7 +259,7 @@
    "title": "Inflation Rate YoY（Jul）",
    "date_tw": "2026-08-12 20:30",
    "sort_key": "2026-08-12T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "3.4%",
    "previous": "3.5%",
    "actual": "",
    "surprise": null
@@ -270,7 +270,7 @@
    "title": "Core Inflation Rate MoM（Jul）",
    "date_tw": "2026-08-12 20:30",
    "sort_key": "2026-08-12T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.2%",
    "previous": "0%",
    "actual": "",
    "surprise": null
@@ -281,7 +281,7 @@
    "title": "Core Inflation Rate YoY（Jul）",
    "date_tw": "2026-08-12 20:30",
    "sort_key": "2026-08-12T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "2.5%",
    "previous": "2.6%",
    "actual": "",
    "surprise": null
@@ -292,7 +292,7 @@
    "title": "Inflation Rate MoM（Jul）",
    "date_tw": "2026-08-12 20:30",
    "sort_key": "2026-08-12T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.1%",
    "previous": "-0.4%",
    "actual": "",
    "surprise": null
