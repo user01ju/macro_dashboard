@@ -536,6 +536,17 @@
    "previous": "0.1%",
    "actual": "",
    "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-08-22": {
+   "indicator": "us_claims",
+   "ref": "2026-08-22",
+   "title": "Initial Jobless Claims（Aug/22）",
+   "date_tw": "2026-08-27 20:30",
+   "sort_key": "2026-08-27T20:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
   }
  }
 }
