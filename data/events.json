@@ -571,6 +571,17 @@
    "previous": "",
    "actual": "",
    "surprise": null
+  },
+  "us_nfp|Non Farm Payrolls Annual Revision Prel|2026-08-28": {
+   "indicator": "us_nfp",
+   "ref": "2026-08-28",
+   "title": "Non Farm Payrolls Annual Revision Prel",
+   "date_tw": "2026-08-28 22:00",
+   "sort_key": "2026-08-28T22:00:00+08:00",
+   "forecast": "",
+   "previous": "-911K",
+   "actual": "",
+   "surprise": null
   }
  }
 }
