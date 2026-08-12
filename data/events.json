@@ -285,8 +285,14 @@
    "sort_key": "2026-08-12T20:30:00+08:00",
    "forecast": "3.4%",
    "previous": "3.5%",
-   "actual": "",
-   "surprise": null
+   "actual": "3.4%",
+   "surprise": {
+    "delta": "+0",
+    "verdict": "inline",
+    "good": null
+   },
+   "ai_analysis": "**判讀：零 surprise，事件本身不具方向性——四項全數命中預期。**\n\n**①** Headline YoY 3.4%→較前值降 0.1pp，Core YoY 2.5% 同步下滑，disinflation 軌道未破。Core MoM 從 0% 回升至 0.2%，但前值屬異常低基期，0.2% 年化約 2.4%，仍屬「可接受」區間，非鷹派訊號。整體是「溫和但不完美」的通膨（headline 3.4% 仍明顯高於目標，推測與能源/服務僵固性有關）。\n\n**②** 對利率預期近乎無影響：全數命中預期時，Fed funds futures 隱含路徑不會重定價，債市波動應收斂。美股反應邏輯 → 折現率不變，行情回到獲利與 AI 資本支出敘事。值得注意的是 headline 與 core 的 0.9pp 缺口，代表能源/食品仍在拉高名目通膨，這會壓抑消費信心但不影響 Fed 決策函數。\n\n**③ 台股**：美元指數缺乏催化，外資動能中性，CPI 這條線本次不構成賣壓來源。傳導權重應下修，台股續由費半、匯率與外資對電子權值的部位調整主導。\n\n**操作含意**：把注意力移回就業數據與 Fed 官員發言；本次 CPI 不是交易觸發點。若後續 Core MoM 連兩月站上 0.3%，才需重評鷹派風險。",
+   "analyzed_at": "2026-08-12T13:50:19+00:00"
   },
   "us_cpi|Core Inflation Rate MoM|2026-07": {
    "indicator": "us_cpi",
@@ -296,8 +302,14 @@
    "sort_key": "2026-08-12T20:30:00+08:00",
    "forecast": "0.2%",
    "previous": "0%",
-   "actual": "",
-   "surprise": null
+   "actual": "0.2%",
+   "surprise": {
+    "delta": "+0",
+    "verdict": "inline",
+    "good": null
+   },
+   "ai_analysis": "**判讀：零 surprise，事件本身不具方向性——四項全數命中預期。**\n\n**①** Headline YoY 3.4%→較前值降 0.1pp，Core YoY 2.5% 同步下滑，disinflation 軌道未破。Core MoM 從 0% 回升至 0.2%，但前值屬異常低基期，0.2% 年化約 2.4%，仍屬「可接受」區間，非鷹派訊號。整體是「溫和但不完美」的通膨（headline 3.4% 仍明顯高於目標，推測與能源/服務僵固性有關）。\n\n**②** 對利率預期近乎無影響：全數命中預期時，Fed funds futures 隱含路徑不會重定價，債市波動應收斂。美股反應邏輯 → 折現率不變，行情回到獲利與 AI 資本支出敘事。值得注意的是 headline 與 core 的 0.9pp 缺口，代表能源/食品仍在拉高名目通膨，這會壓抑消費信心但不影響 Fed 決策函數。\n\n**③ 台股**：美元指數缺乏催化，外資動能中性，CPI 這條線本次不構成賣壓來源。傳導權重應下修，台股續由費半、匯率與外資對電子權值的部位調整主導。\n\n**操作含意**：把注意力移回就業數據與 Fed 官員發言；本次 CPI 不是交易觸發點。若後續 Core MoM 連兩月站上 0.3%，才需重評鷹派風險。",
+   "analyzed_at": "2026-08-12T13:50:19+00:00"
   },
   "us_cpi|Core Inflation Rate YoY|2026-07": {
    "indicator": "us_cpi",
@@ -307,8 +319,14 @@
    "sort_key": "2026-08-12T20:30:00+08:00",
    "forecast": "2.5%",
    "previous": "2.6%",
-   "actual": "",
-   "surprise": null
+   "actual": "2.5%",
+   "surprise": {
+    "delta": "+0",
+    "verdict": "inline",
+    "good": null
+   },
+   "ai_analysis": "**判讀：零 surprise，事件本身不具方向性——四項全數命中預期。**\n\n**①** Headline YoY 3.4%→較前值降 0.1pp，Core YoY 2.5% 同步下滑，disinflation 軌道未破。Core MoM 從 0% 回升至 0.2%，但前值屬異常低基期，0.2% 年化約 2.4%，仍屬「可接受」區間，非鷹派訊號。整體是「溫和但不完美」的通膨（headline 3.4% 仍明顯高於目標，推測與能源/服務僵固性有關）。\n\n**②** 對利率預期近乎無影響：全數命中預期時，Fed funds futures 隱含路徑不會重定價，債市波動應收斂。美股反應邏輯 → 折現率不變，行情回到獲利與 AI 資本支出敘事。值得注意的是 headline 與 core 的 0.9pp 缺口，代表能源/食品仍在拉高名目通膨，這會壓抑消費信心但不影響 Fed 決策函數。\n\n**③ 台股**：美元指數缺乏催化，外資動能中性，CPI 這條線本次不構成賣壓來源。傳導權重應下修，台股續由費半、匯率與外資對電子權值的部位調整主導。\n\n**操作含意**：把注意力移回就業數據與 Fed 官員發言；本次 CPI 不是交易觸發點。若後續 Core MoM 連兩月站上 0.3%，才需重評鷹派風險。",
+   "analyzed_at": "2026-08-12T13:50:19+00:00"
   },
   "us_cpi|Inflation Rate MoM|2026-07": {
    "indicator": "us_cpi",
@@ -318,8 +336,14 @@
    "sort_key": "2026-08-12T20:30:00+08:00",
    "forecast": "0.1%",
    "previous": "-0.4%",
-   "actual": "",
-   "surprise": null
+   "actual": "0.1%",
+   "surprise": {
+    "delta": "+0",
+    "verdict": "inline",
+    "good": null
+   },
+   "ai_analysis": "**判讀：零 surprise，事件本身不具方向性——四項全數命中預期。**\n\n**①** Headline YoY 3.4%→較前值降 0.1pp，Core YoY 2.5% 同步下滑，disinflation 軌道未破。Core MoM 從 0% 回升至 0.2%，但前值屬異常低基期，0.2% 年化約 2.4%，仍屬「可接受」區間，非鷹派訊號。整體是「溫和但不完美」的通膨（headline 3.4% 仍明顯高於目標，推測與能源/服務僵固性有關）。\n\n**②** 對利率預期近乎無影響：全數命中預期時，Fed funds futures 隱含路徑不會重定價，債市波動應收斂。美股反應邏輯 → 折現率不變，行情回到獲利與 AI 資本支出敘事。值得注意的是 headline 與 core 的 0.9pp 缺口，代表能源/食品仍在拉高名目通膨，這會壓抑消費信心但不影響 Fed 決策函數。\n\n**③ 台股**：美元指數缺乏催化，外資動能中性，CPI 這條線本次不構成賣壓來源。傳導權重應下修，台股續由費半、匯率與外資對電子權值的部位調整主導。\n\n**操作含意**：把注意力移回就業數據與 Fed 官員發言；本次 CPI 不是交易觸發點。若後續 Core MoM 連兩月站上 0.3%，才需重評鷹派風險。",
+   "analyzed_at": "2026-08-12T13:50:19+00:00"
   },
   "us_fomc|FOMC Minutes|2026-08-20": {
    "indicator": "us_fomc",
