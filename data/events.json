@@ -548,9 +548,13 @@
    "date_tw": "2026-08-13 20:30",
    "sort_key": "2026-08-13T20:30:00+08:00",
    "forecast": "202K",
-   "previous": "199K",
-   "actual": "",
-   "surprise": null
+   "previous": "200K",
+   "actual": "209K",
+   "surprise": {
+    "delta": "+7K",
+    "verdict": "above",
+    "good": false
+   }
   },
   "us_claims|Initial Jobless Claims|2026-08-15": {
    "indicator": "us_claims",
@@ -559,7 +563,7 @@
    "date_tw": "2026-08-20 20:30",
    "sort_key": "2026-08-20T20:30:00+08:00",
    "forecast": "",
-   "previous": "",
+   "previous": "209",
    "actual": "",
    "surprise": null
   },
