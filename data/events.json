@@ -644,6 +644,39 @@
    "previous": "",
    "actual": "",
    "surprise": null
+  },
+  "us_nfp|Average Hourly Earnings MoM|2026-08": {
+   "indicator": "us_nfp",
+   "ref": "2026-08",
+   "title": "Average Hourly Earnings MoM（Aug）",
+   "date_tw": "2026-09-04 20:30",
+   "sort_key": "2026-09-04T20:30:00+08:00",
+   "forecast": "",
+   "previous": "0.1%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_nfp|Non Farm Payrolls|2026-08": {
+   "indicator": "us_nfp",
+   "ref": "2026-08",
+   "title": "Non Farm Payrolls（Aug）",
+   "date_tw": "2026-09-04 20:30",
+   "sort_key": "2026-09-04T20:30:00+08:00",
+   "forecast": "",
+   "previous": "-23K",
+   "actual": "",
+   "surprise": null
+  },
+  "us_nfp|Unemployment Rate|2026-08": {
+   "indicator": "us_nfp",
+   "ref": "2026-08",
+   "title": "Unemployment Rate（Aug）",
+   "date_tw": "2026-09-04 20:30",
+   "sort_key": "2026-09-04T20:30:00+08:00",
+   "forecast": "",
+   "previous": "4.1%",
+   "actual": "",
+   "surprise": null
   }
  }
 }
