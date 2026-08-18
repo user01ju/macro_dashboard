@@ -34,14 +34,34 @@ jobs:
 
       - name: 還原線上狀態（從 gh-pages）
         run: |
+          set -o pipefail
           mkdir -p output
-          git fetch origin gh-pages 2>/dev/null || true
-          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
-            git archive origin/gh-pages | tar -x -C output/ || true
-            echo "狀態已還原"
-          else
-            echo "gh-pages 尚未建立，驗證會全部 SKIP"
+
+          # verify 不部署，所以還原失敗不會毀資料 —— 它毀的是「驗證本身」：
+          # output/ 空的話所有檢查一律 SKIP，workflow 綠燈收工、什麼都沒驗。
+          # 舊寫法（2>/dev/null || true 再看 show-ref）把 fetch 失敗誤判成
+          # 「分支尚未建立」，正好落進這個假性成功。所以先問遠端分支到底存不存在：
+          # 真的沒有 → 警告後照走（首次部署前的合理狀態）；存在卻 fetch 不到 → 紅掉。
+          if ! git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            echo "::warning::gh-pages 尚未建立，驗證將全數 SKIP"
+            exit 0
           fi
+
+          for i in 1 2 3; do
+            if git fetch --force --depth=1 origin gh-pages:refs/remotes/origin/gh-pages; then
+              break
+            fi
+            echo "gh-pages fetch 第 $i 次失敗，10 秒後重試"
+            sleep 10
+          done
+
+          if ! git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            echo "::error::gh-pages 分支存在但 fetch 三次都失敗 — 中止，避免驗證空跑成假性 PASS"
+            exit 1
+          fi
+
+          git archive origin/gh-pages | tar -x -C output/
+          echo "狀態已還原"
 
       - name: 設定 Python 3.12
         uses: actions/setup-python@v5
