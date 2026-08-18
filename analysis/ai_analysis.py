@@ -47,12 +47,23 @@ def run(events, indicators_by_id):
         try:
             resp = client.messages.create(
                 model=MODEL,
-                max_tokens=1000,
+                # max_tokens 是 thinking + 正文的共用上限。Opus 5 預設開 adaptive
+                # thinking，實測 effort=high 下 thinking 約吃 300 tokens、正文約 500
+                # → 舊的 1000 只剩 17% 餘裕，正文再長一點就截斷。
+                # effort 降 medium：SYSTEM 已把判讀邏輯寫死，這裡不需要深度推理。
+                max_tokens=3000,
                 system=SYSTEM,
+                output_config={"effort": "medium"},
                 messages=[{"role": "user", "content": "\n".join(lines)}],
             )
             if resp.stop_reason == "refusal":
                 print(f"[ai] {ind_id} {date} 被拒絕，跳過")
+                continue
+            # 截斷的判讀不能寫進去：篩選條件是「有 actual 且無 ai_analysis」，
+            # 一旦寫入就永遠不會重試，殘缺文字會永久留在 events.json 與網站上。
+            # 寧可這輪不寫，下輪重打（每月數十次呼叫，重打成本可忽略）。
+            if resp.stop_reason == "max_tokens":
+                print(f"[ai] {ind_id} {date} 觸頂 max_tokens（截斷），不寫入，下輪重試")
                 continue
             text = "".join(b.text for b in resp.content if b.type == "text").strip()
         except Exception as e:  # noqa: BLE001

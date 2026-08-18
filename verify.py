@@ -483,9 +483,7 @@ def check_ai_analysis_coverage(ctx):
     if not targets:
         return SKIP, "沒有需要 AI 判讀的已公布事件"
     analyzed = [k for k, ev in targets if ev.get("ai_analysis")]
-    if not analyzed:
-        return SKIP, (f"{len(targets)} 筆待判讀事件全無分析，視為 AI 層未啟用"
-                      "（無 ANTHROPIC_API_KEY 或狀態尚未更新），跳過覆蓋率檢查")
+
     cutoff = ctx.now - timedelta(hours=AI_COVERAGE_GRACE_HOURS)
     missing = []
     for key, ev in targets:
@@ -497,6 +495,24 @@ def check_ai_analysis_coverage(ctx):
         except (ValueError, KeyError):
             pass
         missing.append(key)
+
+    # 「一筆分析都沒有」有兩種完全相反的成因，用金鑰在不在當獨立訊號分辨：
+    #   無金鑰 → AI 層本來就沒啟用（本機跑、或 secret 沒設）→ SKIP，別亂叫。
+    #   有金鑰 → 這是 gh-pages 還原失敗導致冷啟動、把線上判讀整批抹掉的特徵，
+    #            或 API 全面失敗。必須 FAIL 擋下部署，否則這包空狀態會覆蓋線上，
+    #            下一輪再把全部判讀重打一次（燒錢且無聲）。
+    # 只看「有沒有分析」不夠 —— 舊寫法在這裡直接 SKIP，抹除因此完全隱形。
+    if not analyzed:
+        if not os.environ.get("ANTHROPIC_API_KEY"):
+            return SKIP, (f"{len(targets)} 筆待判讀事件全無分析，且無 ANTHROPIC_API_KEY"
+                          "→ 視為 AI 層未啟用，跳過覆蓋率檢查")
+        if missing:
+            return FAIL, (f"有 ANTHROPIC_API_KEY 卻 0/{len(targets)} 筆有判讀，其中 {len(missing)} 筆"
+                          f"已逾寬限期 {AI_COVERAGE_GRACE_HOURS} 小時：{missing[:3]}。"
+                          "這是 gh-pages 還原失敗走冷啟動（線上判讀被整批抹除）或 API 全面失敗的特徵，"
+                          "擋下部署以免空狀態覆蓋線上")
+        return SKIP, f"{len(targets)} 筆待判讀事件都還在寬限期內，尚無分析"
+
     if missing:
         return WARN, (f"{len(missing)}/{len(targets)} 筆已公布逾 {AI_COVERAGE_GRACE_HOURS} 小時"
                       f"的事件沒有 AI 判讀（API 失敗或被拒？）：{missing[:3]}")

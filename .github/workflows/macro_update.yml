@@ -39,14 +39,36 @@ jobs:
 
       - name: 還原歷史狀態（從 gh-pages）
         run: |
+          set -o pipefail
           mkdir -p output
-          git fetch origin gh-pages 2>/dev/null || true
-          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
-            git archive origin/gh-pages | tar -x -C output/ || true
-            echo "狀態已還原"
-          else
+
+          # gh-pages 同時是成品 host 和狀態 store（events.json 內含全部 AI 判讀），
+          # 所以「還原失敗」不是退化而是資料毀損：整包 output/ 會被只有今天的內容
+          # 覆蓋，線上判讀全消失，下一輪還會把它們全部重打一次（燒 API 錢、無聲）。
+          # 舊寫法（2>/dev/null || true 再看 show-ref）會把 fetch 失敗誤判成
+          # 「gh-pages 尚未建立」而走冷啟動 —— twse_website 2026-08-03 就是這樣被
+          # 自己的 CI 抹掉 282 天快取。所以：先問遠端分支存不存在，存在就一定要
+          # 還原成功，失敗寧可讓 job 紅掉也不部署。
+          if ! git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
             echo "gh-pages 尚未建立，從頭部署"
+            exit 0
           fi
+
+          for i in 1 2 3; do
+            if git fetch --force --depth=1 origin gh-pages:refs/remotes/origin/gh-pages; then
+              break
+            fi
+            echo "gh-pages fetch 第 $i 次失敗，10 秒後重試"
+            sleep 10
+          done
+
+          if ! git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            echo "::error::gh-pages 分支存在但 fetch 三次都失敗 — 中止，避免用空狀態覆蓋線上"
+            exit 1
+          fi
+
+          git archive origin/gh-pages | tar -x -C output/
+          echo "狀態已還原"
 
       - name: 設定 Python 3.12
         uses: actions/setup-python@v5
