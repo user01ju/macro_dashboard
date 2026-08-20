@@ -563,9 +563,13 @@
    "date_tw": "2026-08-20 20:30",
    "sort_key": "2026-08-20T20:30:00+08:00",
    "forecast": "210K",
-   "previous": "209K",
-   "actual": "",
-   "surprise": null
+   "previous": "212K",
+   "actual": "206K",
+   "surprise": {
+    "delta": "-4K",
+    "verdict": "below",
+    "good": true
+   }
   },
   "us_pce|Core PCE Price Index YoY|2026-07": {
    "indicator": "us_pce",
@@ -596,7 +600,7 @@
    "date_tw": "2026-08-27 20:30",
    "sort_key": "2026-08-27T20:30:00+08:00",
    "forecast": "",
-   "previous": "",
+   "previous": "206",
    "actual": "",
    "surprise": null
   },
