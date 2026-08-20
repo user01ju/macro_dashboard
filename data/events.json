@@ -577,7 +577,7 @@
    "title": "Core PCE Price Index YoY（Jul）",
    "date_tw": "2026-08-26 20:30",
    "sort_key": "2026-08-26T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "3.3%",
    "previous": "3.3%",
    "actual": "",
    "surprise": null
@@ -588,7 +588,7 @@
    "title": "Core PCE Price Index MoM（Jul）",
    "date_tw": "2026-08-26 20:30",
    "sort_key": "2026-08-26T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.2%",
    "previous": "0.1%",
    "actual": "",
    "surprise": null
