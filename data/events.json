@@ -692,6 +692,17 @@
    "previous": "32.9",
    "actual": "",
    "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-09-05": {
+   "indicator": "us_claims",
+   "ref": "2026-09-05",
+   "title": "Initial Jobless Claims（Sep/05）",
+   "date_tw": "2026-09-10 20:30",
+   "sort_key": "2026-09-10T20:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
   }
  }
 }
