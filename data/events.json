@@ -703,6 +703,50 @@
    "previous": "",
    "actual": "",
    "surprise": null
+  },
+  "us_cpi|Core Inflation Rate MoM|2026-08": {
+   "indicator": "us_cpi",
+   "ref": "2026-08",
+   "title": "Core Inflation Rate MoM（Aug）",
+   "date_tw": "2026-09-11 20:30",
+   "sort_key": "2026-09-11T20:30:00+08:00",
+   "forecast": "",
+   "previous": "0.2%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Inflation Rate YoY|2026-08": {
+   "indicator": "us_cpi",
+   "ref": "2026-08",
+   "title": "Inflation Rate YoY（Aug）",
+   "date_tw": "2026-09-11 20:30",
+   "sort_key": "2026-09-11T20:30:00+08:00",
+   "forecast": "",
+   "previous": "3.4",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Core Inflation Rate YoY|2026-08": {
+   "indicator": "us_cpi",
+   "ref": "2026-08",
+   "title": "Core Inflation Rate YoY（Aug）",
+   "date_tw": "2026-09-11 20:30",
+   "sort_key": "2026-09-11T20:30:00+08:00",
+   "forecast": "",
+   "previous": "2.5",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Inflation Rate MoM|2026-08": {
+   "indicator": "us_cpi",
+   "ref": "2026-08",
+   "title": "Inflation Rate MoM（Aug）",
+   "date_tw": "2026-09-11 20:30",
+   "sort_key": "2026-09-11T20:30:00+08:00",
+   "forecast": "",
+   "previous": "0.1",
+   "actual": "",
+   "surprise": null
   }
  }
 }
