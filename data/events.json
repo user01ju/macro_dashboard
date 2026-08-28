@@ -649,7 +649,7 @@
    "title": "ISM Manufacturing PMI（Aug）",
    "date_tw": "2026-09-01 22:00",
    "sort_key": "2026-09-01T22:00:00+08:00",
-   "forecast": "",
+   "forecast": "55.3",
    "previous": "55.6",
    "actual": "",
    "surprise": null
@@ -671,7 +671,7 @@
    "title": "Average Hourly Earnings MoM（Aug）",
    "date_tw": "2026-09-04 20:30",
    "sort_key": "2026-09-04T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.2%",
    "previous": "0.1%",
    "actual": "",
    "surprise": null
@@ -682,7 +682,7 @@
    "title": "Non Farm Payrolls（Aug）",
    "date_tw": "2026-09-04 20:30",
    "sort_key": "2026-09-04T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "45K",
    "previous": "-23K",
    "actual": "",
    "surprise": null
@@ -693,7 +693,7 @@
    "title": "Unemployment Rate（Aug）",
    "date_tw": "2026-09-04 20:30",
    "sort_key": "2026-09-04T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "4.2%",
    "previous": "4.1%",
    "actual": "",
    "surprise": null
@@ -781,6 +781,17 @@
    "title": "Fed Press Conference",
    "date_tw": "2026-09-17 02:30",
    "sort_key": "2026-09-17T02:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-09-12": {
+   "indicator": "us_claims",
+   "ref": "2026-09-12",
+   "title": "Initial Jobless Claims（Sep/12）",
+   "date_tw": "2026-09-17 20:30",
+   "sort_key": "2026-09-17T20:30:00+08:00",
    "forecast": "",
    "previous": "",
    "actual": "",
