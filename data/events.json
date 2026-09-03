@@ -669,9 +669,13 @@
    "date_tw": "2026-09-03 20:30",
    "sort_key": "2026-09-03T20:30:00+08:00",
    "forecast": "205K",
-   "previous": "203K",
-   "actual": "",
-   "surprise": null
+   "previous": "204K",
+   "actual": "206K",
+   "surprise": {
+    "delta": "+1K",
+    "verdict": "above",
+    "good": false
+   }
   },
   "us_nfp|Average Hourly Earnings MoM|2026-08": {
    "indicator": "us_nfp",
@@ -690,7 +694,7 @@
    "title": "Non Farm Payrolls（Aug）",
    "date_tw": "2026-09-04 20:30",
    "sort_key": "2026-09-04T20:30:00+08:00",
-   "forecast": "58K",
+   "forecast": "56K",
    "previous": "-23K",
    "actual": "",
    "surprise": null
@@ -724,7 +728,7 @@
    "date_tw": "2026-09-10 20:30",
    "sort_key": "2026-09-10T20:30:00+08:00",
    "forecast": "",
-   "previous": "",
+   "previous": "206",
    "actual": "",
    "surprise": null
   },
@@ -734,7 +738,7 @@
    "title": "Core Inflation Rate MoM（Aug）",
    "date_tw": "2026-09-11 20:30",
    "sort_key": "2026-09-11T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.2%",
    "previous": "0.2%",
    "actual": "",
    "surprise": null
@@ -767,7 +771,7 @@
    "title": "Inflation Rate MoM（Aug）",
    "date_tw": "2026-09-11 20:30",
    "sort_key": "2026-09-11T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.4%",
    "previous": "0.1%",
    "actual": "",
    "surprise": null
