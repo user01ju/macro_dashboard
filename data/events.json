@@ -748,9 +748,13 @@
    "date_tw": "2026-09-10 20:30",
    "sort_key": "2026-09-10T20:30:00+08:00",
    "forecast": "205K",
-   "previous": "206K",
-   "actual": "",
-   "surprise": null
+   "previous": "207K",
+   "actual": "206K",
+   "surprise": {
+    "delta": "+1K",
+    "verdict": "above",
+    "good": false
+   }
   },
   "us_cpi|Core Inflation Rate MoM|2026-08": {
    "indicator": "us_cpi",
@@ -825,7 +829,7 @@
    "date_tw": "2026-09-17 20:30",
    "sort_key": "2026-09-17T20:30:00+08:00",
    "forecast": "",
-   "previous": "",
+   "previous": "206K",
    "actual": "",
    "surprise": null
   },
