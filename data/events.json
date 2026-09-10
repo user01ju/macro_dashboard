@@ -839,6 +839,28 @@
    "previous": "",
    "actual": "",
    "surprise": null
+  },
+  "us_pce|Core PCE Price Index MoM|2026-08": {
+   "indicator": "us_pce",
+   "ref": "2026-08",
+   "title": "Core PCE Price Index MoM（Aug）",
+   "date_tw": "2026-09-30 20:30",
+   "sort_key": "2026-09-30T20:30:00+08:00",
+   "forecast": "",
+   "previous": "0.2",
+   "actual": "",
+   "surprise": null
+  },
+  "us_pce|Core PCE Price Index YoY|2026-08": {
+   "indicator": "us_pce",
+   "ref": "2026-08",
+   "title": "Core PCE Price Index YoY（Aug）",
+   "date_tw": "2026-09-30 20:30",
+   "sort_key": "2026-09-30T20:30:00+08:00",
+   "forecast": "",
+   "previous": "3.3",
+   "actual": "",
+   "surprise": null
   }
  }
 }
