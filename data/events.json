@@ -865,6 +865,28 @@
    "previous": "3.3",
    "actual": "",
    "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-09-26": {
+   "indicator": "us_claims",
+   "ref": "2026-09-26",
+   "title": "Initial Jobless Claims（Sep/26）",
+   "date_tw": "2026-10-01 20:30",
+   "sort_key": "2026-10-01T20:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
+  },
+  "us_ism|ISM Manufacturing PMI|2026-09": {
+   "indicator": "us_ism",
+   "ref": "2026-09",
+   "title": "ISM Manufacturing PMI（Sep）",
+   "date_tw": "2026-10-01 22:00",
+   "sort_key": "2026-10-01T22:00:00+08:00",
+   "forecast": "",
+   "previous": "54.6",
+   "actual": "",
+   "surprise": null
   }
  }
 }
