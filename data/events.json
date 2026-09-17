@@ -860,8 +860,12 @@
    "sort_key": "2026-09-17T20:30:00+08:00",
    "forecast": "208K",
    "previous": "206K",
-   "actual": "",
-   "surprise": null
+   "actual": "196K",
+   "surprise": {
+    "delta": "-12K",
+    "verdict": "below",
+    "good": true
+   }
   },
   "us_claims|Initial Jobless Claims|2026-09-19": {
    "indicator": "us_claims",
@@ -870,7 +874,7 @@
    "date_tw": "2026-09-24 20:30",
    "sort_key": "2026-09-24T20:30:00+08:00",
    "forecast": "",
-   "previous": "",
+   "previous": "196K",
    "actual": "",
    "surprise": null
   },
