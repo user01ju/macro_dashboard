@@ -962,6 +962,17 @@
    "previous": "162",
    "actual": "",
    "surprise": null
+  },
+  "us_fomc|FOMC Minutes|2026-10-08": {
+   "indicator": "us_fomc",
+   "ref": "2026-10-08",
+   "title": "FOMC Minutes",
+   "date_tw": "2026-10-08 02:00",
+   "sort_key": "2026-10-08T02:00:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
   }
  }
 }
