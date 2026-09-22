@@ -885,7 +885,7 @@
    "date_tw": "2026-09-30 20:30",
    "sort_key": "2026-09-30T20:30:00+08:00",
    "forecast": "",
-   "previous": "0.2",
+   "previous": "0.2%",
    "actual": "",
    "surprise": null
   },
@@ -896,7 +896,7 @@
    "date_tw": "2026-09-30 20:30",
    "sort_key": "2026-09-30T20:30:00+08:00",
    "forecast": "",
-   "previous": "3.3",
+   "previous": "3.3%",
    "actual": "",
    "surprise": null
   },
@@ -952,7 +952,7 @@
    "date_tw": "2026-10-02 20:30",
    "sort_key": "2026-10-02T20:30:00+08:00",
    "forecast": "",
-   "previous": "4.1",
+   "previous": "4.1%",
    "actual": "",
    "surprise": null
   },
@@ -963,7 +963,7 @@
    "date_tw": "2026-10-02 20:30",
    "sort_key": "2026-10-02T20:30:00+08:00",
    "forecast": "",
-   "previous": "162",
+   "previous": "162K",
    "actual": "",
    "surprise": null
   },
