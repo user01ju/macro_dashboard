@@ -1047,6 +1047,17 @@
    "previous": "0.4",
    "actual": "",
    "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-10-10": {
+   "indicator": "us_claims",
+   "ref": "2026-10-10",
+   "title": "Initial Jobless Claims（Oct/10）",
+   "date_tw": "2026-10-15 20:30",
+   "sort_key": "2026-10-15T20:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
   }
  }
 }
