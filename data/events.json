@@ -910,7 +910,7 @@
    "title": "Initial Jobless Claims（Sep/26）",
    "date_tw": "2026-10-01 20:30",
    "sort_key": "2026-10-01T20:30:00+08:00",
-   "forecast": "199K",
+   "forecast": "200K",
    "previous": "197K",
    "actual": "",
    "surprise": null
@@ -921,7 +921,7 @@
    "title": "ISM Manufacturing PMI（Sep）",
    "date_tw": "2026-10-01 22:00",
    "sort_key": "2026-10-01T22:00:00+08:00",
-   "forecast": "54.8",
+   "forecast": "54.9",
    "previous": "54.6",
    "actual": "",
    "surprise": null
@@ -955,7 +955,7 @@
    "title": "Unemployment Rate（Sep）",
    "date_tw": "2026-10-02 20:30",
    "sort_key": "2026-10-02T20:30:00+08:00",
-   "forecast": "4.2%",
+   "forecast": "4.1%",
    "previous": "4.1%",
    "actual": "",
    "surprise": null
@@ -966,7 +966,7 @@
    "title": "Non Farm Payrolls（Sep）",
    "date_tw": "2026-10-02 20:30",
    "sort_key": "2026-10-02T20:30:00+08:00",
-   "forecast": "100K",
+   "forecast": "84K",
    "previous": "162K",
    "actual": "",
    "surprise": null
