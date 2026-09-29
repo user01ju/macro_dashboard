@@ -899,7 +899,7 @@
    "title": "Core PCE Price Index YoY（Aug）",
    "date_tw": "2026-09-30 20:30",
    "sort_key": "2026-09-30T20:30:00+08:00",
-   "forecast": "3.4%",
+   "forecast": "3.3%",
    "previous": "3.3%",
    "actual": "",
    "surprise": null
@@ -921,7 +921,7 @@
    "title": "ISM Manufacturing PMI（Sep）",
    "date_tw": "2026-10-01 22:00",
    "sort_key": "2026-10-01T22:00:00+08:00",
-   "forecast": "54.9",
+   "forecast": "55",
    "previous": "54.6",
    "actual": "",
    "surprise": null
@@ -966,7 +966,7 @@
    "title": "Non Farm Payrolls（Sep）",
    "date_tw": "2026-10-02 20:30",
    "sort_key": "2026-10-02T20:30:00+08:00",
-   "forecast": "84K",
+   "forecast": "90K",
    "previous": "162K",
    "actual": "",
    "surprise": null
