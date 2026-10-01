@@ -923,9 +923,13 @@
    "date_tw": "2026-10-01 20:30",
    "sort_key": "2026-10-01T20:30:00+08:00",
    "forecast": "200K",
-   "previous": "197K",
-   "actual": "",
-   "surprise": null
+   "previous": "198K",
+   "actual": "197K",
+   "surprise": {
+    "delta": "-3K",
+    "verdict": "below",
+    "good": true
+   }
   },
   "us_ism|ISM Manufacturing PMI|2026-09": {
    "indicator": "us_ism",
@@ -935,8 +939,14 @@
    "sort_key": "2026-10-01T22:00:00+08:00",
    "forecast": "55",
    "previous": "54.6",
-   "actual": "",
-   "surprise": null
+   "actual": "54.5",
+   "surprise": {
+    "delta": "-0.5",
+    "verdict": "below",
+    "good": false
+   },
+   "ai_analysis": "**結論：小幅 miss 但無訊號價值，54.5 仍是強擴張，方向不變。**\n\n① 低於預期 0.5、低於前值 0.1，幅度在月度雜訊帶內（ISM 標準差約 1.5–2）。真正的重點是水位：54.5 遠離 48–50 的雜訊區，連續站穩榮枯線上方代表製造業已完成補庫存轉為實質擴張，對應 S&P 500 盈餘年增仍有雙位數支撐。除非新訂單分項跌破 50（需確認細項），否則不改多頭景氣判斷。\n\n② 對利率預期：這種強度的 PMI 偏鷹——它削弱降息急迫性，若同時 Prices Paid 落在 60 以上，會推升終點利率定價並壓縮估值。股市反應取決於組合：總指數強 + Prices Paid 緩和＝最佳（盈餘上修、折現率不升）；總指數強 + 價格分項同步上衝＝殖利率走升、長天期科技股承壓。小幅 miss 本身反而是「剛剛好」的緩衝。\n\n③ 台股：ISM 54.5 與台灣出口訂單同向，對電子零組件、ODM 的季線動能是確認而非警訊。但台股當前對美債殖利率的敏感度高於對景氣的敏感度，若此數據推升利率，權值股可能先修估值再反映基本面。\n\n（高度推測）未見分項前，不宜單憑總指數加碼；新訂單與 Prices Paid 的分歧才是交易訊號。",
+   "analyzed_at": "2026-10-01T18:26:47+00:00"
   },
   "tsmc_rev|2026-08": {
    "indicator": "tsmc_rev",
@@ -1012,7 +1022,7 @@
    "date_tw": "2026-10-08 20:30",
    "sort_key": "2026-10-08T20:30:00+08:00",
    "forecast": "",
-   "previous": "",
+   "previous": "197",
    "actual": "",
    "surprise": null
   },
