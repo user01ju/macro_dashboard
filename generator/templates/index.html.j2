@@ -83,7 +83,7 @@
       </tr>
       {% endfor %}
     </table>
-    {% if g.ai_analysis %}<div class="ai">{{ g.ai_analysis }}</div>{% endif %}
+    {% if g.ai_analysis %}<div class="ai">{{ g.ai_analysis | md | safe }}</div>{% endif %}
   </div>
   {% else %}
   <div class="card">還沒有已公布的數據（第一次執行後會隨時間累積）。</div>
@@ -103,7 +103,7 @@
   <footer>
     資料源：TradingView 經濟行事曆（預期/實際/前值）· FRED · 財政部關務署（趨勢圖 NTD 序列）·
     TWSE OpenAPI · FinMind（月營收回補）。台積電法說日期為手動維護。
-    AI 判讀由 Claude（claude-opus-5）自動生成，僅供研究參考。
+    AI 判讀由 Claude（claude-opus-5-5）自動生成，僅供研究參考。
   </footer>
 </div>
 <script>

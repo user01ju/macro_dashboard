@@ -7,7 +7,7 @@ import os
 from collections import defaultdict
 from datetime import datetime, timezone
 
-MODEL = "claude-opus-5"
+MODEL = "claude-opus-5-5"
 
 SYSTEM = (
     "你是台股/美股總經分析師。使用者是量化投資專家，繁體中文、terse、先講結論。"
@@ -45,15 +45,17 @@ def run(events, indicators_by_id):
                 f"- {ev['title']}: 實際 {ev['actual'] or 'N/A'} / 預期 {ev['forecast'] or 'N/A'} / 前值 {ev['previous'] or 'N/A'}"
             )
         try:
-            resp = client.messages.create(
+            resp = client.beta.messages.create(
                 model=MODEL,
-                # max_tokens 是 thinking + 正文的共用上限。Opus 5 預設開 adaptive
-                # thinking，實測 effort=high 下 thinking 約吃 300 tokens、正文約 500
-                # → 舊的 1000 只剩 17% 餘裕，正文再長一點就截斷。
-                # effort 降 medium：SYSTEM 已把判讀邏輯寫死，這裡不需要深度推理。
-                max_tokens=3000,
+                # max_tokens 是 thinking + 正文的共用上限（Opus 5.5 思考恆開），
+                # 給寬一點：觸頂會被下面的 max_tokens 檢查丟掉、白付一次。
+                # effort medium：SYSTEM 已把判讀邏輯寫死，這裡不需要深度推理。
+                max_tokens=16000,
                 system=SYSTEM,
                 output_config={"effort": "medium"},
+                # 安全分類器誤擋時由伺服器改用建議的備援模型重跑
+                betas=["server-side-fallback-2026-07-01"],
+                extra_body={"fallbacks": "default"},
                 messages=[{"role": "user", "content": "\n".join(lines)}],
             )
             if resp.stop_reason == "refusal":
