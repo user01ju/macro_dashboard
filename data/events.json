@@ -1109,6 +1109,28 @@
    "previous": "",
    "actual": "",
    "surprise": null
+  },
+  "us_fomc|Fed Interest Rate Decision|2026-10": {
+   "indicator": "us_fomc",
+   "ref": "2026-10",
+   "title": "Fed Interest Rate Decision",
+   "date_tw": "2026-10-29 02:00",
+   "sort_key": "2026-10-29T02:00:00+08:00",
+   "forecast": "",
+   "previous": "4",
+   "actual": "",
+   "surprise": null
+  },
+  "us_fomc|Fed Press Conference|2026-10-29": {
+   "indicator": "us_fomc",
+   "ref": "2026-10-29",
+   "title": "Fed Press Conference",
+   "date_tw": "2026-10-29 02:30",
+   "sort_key": "2026-10-29T02:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
   }
  }
 }
