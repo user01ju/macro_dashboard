@@ -1137,6 +1137,39 @@
    "previous": "",
    "actual": "",
    "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-10-24": {
+   "indicator": "us_claims",
+   "ref": "2026-10-24",
+   "title": "Initial Jobless Claims（Oct/24）",
+   "date_tw": "2026-10-29 20:30",
+   "sort_key": "2026-10-29T20:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
+  },
+  "us_pce|Core PCE Price Index YoY|2026-09": {
+   "indicator": "us_pce",
+   "ref": "2026-09",
+   "title": "Core PCE Price Index YoY（Sep）",
+   "date_tw": "2026-10-29 20:30",
+   "sort_key": "2026-10-29T20:30:00+08:00",
+   "forecast": "",
+   "previous": "3",
+   "actual": "",
+   "surprise": null
+  },
+  "us_pce|Core PCE Price Index MoM|2026-09": {
+   "indicator": "us_pce",
+   "ref": "2026-09",
+   "title": "Core PCE Price Index MoM（Sep）",
+   "date_tw": "2026-10-29 20:30",
+   "sort_key": "2026-10-29T20:30:00+08:00",
+   "forecast": "",
+   "previous": "0.2",
+   "actual": "",
+   "surprise": null
   }
  }
 }
