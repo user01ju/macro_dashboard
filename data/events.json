@@ -1056,7 +1056,7 @@
    "title": "Core Inflation Rate MoM（Sep）",
    "date_tw": "2026-10-14 20:30",
    "sort_key": "2026-10-14T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.2%",
    "previous": "0.3%",
    "actual": "",
    "surprise": null
@@ -1067,7 +1067,7 @@
    "title": "Core Inflation Rate YoY（Sep）",
    "date_tw": "2026-10-14 20:30",
    "sort_key": "2026-10-14T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "2.5%",
    "previous": "2.4%",
    "actual": "",
    "surprise": null
@@ -1078,7 +1078,7 @@
    "title": "Inflation Rate YoY（Sep）",
    "date_tw": "2026-10-14 20:30",
    "sort_key": "2026-10-14T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "3.6%",
    "previous": "3.4%",
    "actual": "",
    "surprise": null
@@ -1089,8 +1089,8 @@
    "title": "Inflation Rate MoM（Sep）",
    "date_tw": "2026-10-14 20:30",
    "sort_key": "2026-10-14T20:30:00+08:00",
-   "forecast": "",
-   "previous": "0.4",
+   "forecast": "0.6%",
+   "previous": "0.4%",
    "actual": "",
    "surprise": null
   },
@@ -1100,7 +1100,7 @@
    "title": "Initial Jobless Claims（Oct/10）",
    "date_tw": "2026-10-15 20:30",
    "sort_key": "2026-10-15T20:30:00+08:00",
-   "forecast": "",
+   "forecast": "197K",
    "previous": "197K",
    "actual": "",
    "surprise": null
