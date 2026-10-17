@@ -1232,6 +1232,39 @@
    "previous": "",
    "actual": "",
    "surprise": null
+  },
+  "us_nfp|Non Farm Payrolls|2026-10": {
+   "indicator": "us_nfp",
+   "ref": "2026-10",
+   "title": "Non Farm Payrolls（Oct）",
+   "date_tw": "2026-11-06 21:30",
+   "sort_key": "2026-11-06T21:30:00+08:00",
+   "forecast": "",
+   "previous": "29",
+   "actual": "",
+   "surprise": null
+  },
+  "us_nfp|Average Hourly Earnings MoM|2026-10": {
+   "indicator": "us_nfp",
+   "ref": "2026-10",
+   "title": "Average Hourly Earnings MoM（Oct）",
+   "date_tw": "2026-11-06 21:30",
+   "sort_key": "2026-11-06T21:30:00+08:00",
+   "forecast": "",
+   "previous": "0.1",
+   "actual": "",
+   "surprise": null
+  },
+  "us_nfp|Unemployment Rate|2026-10": {
+   "indicator": "us_nfp",
+   "ref": "2026-10",
+   "title": "Unemployment Rate（Oct）",
+   "date_tw": "2026-11-06 21:30",
+   "sort_key": "2026-11-06T21:30:00+08:00",
+   "forecast": "",
+   "previous": "4.2",
+   "actual": "",
+   "surprise": null
   }
  }
 }
