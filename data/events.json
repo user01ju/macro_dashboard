@@ -1265,6 +1265,17 @@
    "previous": "4.2",
    "actual": "",
    "surprise": null
+  },
+  "tw_exports|Exports YoY|2026-10": {
+   "indicator": "tw_exports",
+   "ref": "2026-10",
+   "title": "Exports YoY（Oct）",
+   "date_tw": "2026-11-09 16:00",
+   "sort_key": "2026-11-09T16:00:00+08:00",
+   "forecast": "",
+   "previous": "60.9",
+   "actual": "",
+   "surprise": null
   }
  }
 }
