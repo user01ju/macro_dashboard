@@ -1276,6 +1276,50 @@
    "previous": "60.9",
    "actual": "",
    "surprise": null
+  },
+  "us_cpi|Core Inflation Rate MoM|2026-10": {
+   "indicator": "us_cpi",
+   "ref": "2026-10",
+   "title": "Core Inflation Rate MoM（Oct）",
+   "date_tw": "2026-11-10 21:30",
+   "sort_key": "2026-11-10T21:30:00+08:00",
+   "forecast": "",
+   "previous": "0.3",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Inflation Rate MoM|2026-10": {
+   "indicator": "us_cpi",
+   "ref": "2026-10",
+   "title": "Inflation Rate MoM（Oct）",
+   "date_tw": "2026-11-10 21:30",
+   "sort_key": "2026-11-10T21:30:00+08:00",
+   "forecast": "",
+   "previous": "0.6",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Inflation Rate YoY|2026-10": {
+   "indicator": "us_cpi",
+   "ref": "2026-10",
+   "title": "Inflation Rate YoY（Oct）",
+   "date_tw": "2026-11-10 21:30",
+   "sort_key": "2026-11-10T21:30:00+08:00",
+   "forecast": "",
+   "previous": "3.7",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Core Inflation Rate YoY|2026-10": {
+   "indicator": "us_cpi",
+   "ref": "2026-10",
+   "title": "Core Inflation Rate YoY（Oct）",
+   "date_tw": "2026-11-10 21:30",
+   "sort_key": "2026-11-10T21:30:00+08:00",
+   "forecast": "",
+   "previous": "2.6",
+   "actual": "",
+   "surprise": null
   }
  }
 }
