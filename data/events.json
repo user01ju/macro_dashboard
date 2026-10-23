@@ -1324,6 +1324,17 @@
    "previous": "2.6",
    "actual": "",
    "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-11-07": {
+   "indicator": "us_claims",
+   "ref": "2026-11-07",
+   "title": "Initial Jobless Claims（Nov/07）",
+   "date_tw": "2026-11-12 21:30",
+   "sort_key": "2026-11-12T21:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
   }
  }
 }
