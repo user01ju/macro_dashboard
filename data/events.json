@@ -1176,7 +1176,7 @@
    "title": "Initial Jobless Claims（Oct/24）",
    "date_tw": "2026-10-29 20:30",
    "sort_key": "2026-10-29T20:30:00+08:00",
-   "forecast": "200K",
+   "forecast": "199K",
    "previous": "194K",
    "actual": "",
    "surprise": null
@@ -1244,7 +1244,7 @@
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
    "forecast": "",
-   "previous": "29",
+   "previous": "29K",
    "actual": "",
    "surprise": null
   },
@@ -1255,7 +1255,7 @@
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
    "forecast": "",
-   "previous": "0.1",
+   "previous": "0.1%",
    "actual": "",
    "surprise": null
   },
@@ -1266,7 +1266,7 @@
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
    "forecast": "",
-   "previous": "4.2",
+   "previous": "4.2%",
    "actual": "",
    "surprise": null
   },
