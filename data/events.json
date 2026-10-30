@@ -1241,9 +1241,9 @@
    "indicator": "us_ism",
    "ref": "2026-10",
    "title": "ISM Manufacturing PMI（Oct）",
-   "date_tw": "2026-11-02 22:00",
-   "sort_key": "2026-11-02T22:00:00+08:00",
-   "forecast": "",
+   "date_tw": "2026-11-02 23:00",
+   "sort_key": "2026-11-02T23:00:00+08:00",
+   "forecast": "54.7",
    "previous": "54.5",
    "actual": "",
    "surprise": null
@@ -1254,7 +1254,7 @@
    "title": "Initial Jobless Claims（Oct/31）",
    "date_tw": "2026-11-05 21:30",
    "sort_key": "2026-11-05T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "197K",
    "previous": "194K",
    "actual": "",
    "surprise": null
@@ -1265,7 +1265,7 @@
    "title": "Non Farm Payrolls（Oct）",
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "65K",
    "previous": "29K",
    "actual": "",
    "surprise": null
@@ -1276,7 +1276,7 @@
    "title": "Average Hourly Earnings MoM（Oct）",
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.3%",
    "previous": "0.1%",
    "actual": "",
    "surprise": null
@@ -1287,7 +1287,7 @@
    "title": "Unemployment Rate（Oct）",
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "4.2%",
    "previous": "4.2%",
    "actual": "",
    "surprise": null
