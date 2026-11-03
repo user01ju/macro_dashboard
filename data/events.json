@@ -870,14 +870,14 @@
   "us_claims|Initial Jobless Claims|2026-09-19": {
    "indicator": "us_claims",
    "ref": "2026-09-19",
-   "title": "Initial Jobless Claims（Sep/19）",
+   "title": "Initial Jobless Claims（w/o Sep. 14, 2026）",
    "date_tw": "2026-09-24 20:30",
    "sort_key": "2026-09-24T20:30:00+08:00",
    "forecast": "201K",
    "previous": "198K",
-   "actual": "197K",
+   "actual": "198K",
    "surprise": {
-    "delta": "-4K",
+    "delta": "-3K",
     "verdict": "below",
     "good": true
    }
@@ -885,16 +885,16 @@
   "us_pce|Core PCE Price Index MoM|2026-08": {
    "indicator": "us_pce",
    "ref": "2026-08",
-   "title": "Core PCE Price Index MoM（Aug）",
+   "title": "Core PCE Price Index MoM（Aug. 2026）",
    "date_tw": "2026-09-30 20:30",
    "sort_key": "2026-09-30T20:30:00+08:00",
    "forecast": "0.3%",
    "previous": "0.1%",
-   "actual": "0.2%",
+   "actual": "0.3%",
    "surprise": {
-    "delta": "-0.1",
-    "verdict": "below",
-    "good": true
+    "delta": "+0",
+    "verdict": "inline",
+    "good": null
    },
    "ai_analysis": "**結論：下行 surprise，屬於「CPI 沒吃掉」的那一成，偏鴿，利多風險資產。**\n\n① MoM 0.2% 低於預期 0.3%，但高於前值 0.1%——單月看不算轉向，關鍵在 YoY 3.0% vs 預期 3.3% 的 0.3pp 落差。這幅度遠超四捨五入，多半來自前期修正或 PCE 獨有權重項（醫療服務、金融服務 imputed 價格）走弱，代表市場用 CPI 推 PCE 的映射這次算錯了，屬於需要重新定價的日子。（推測：權重歸因待細項確認）\n\n② 年增率黏在 3%、未再上行，Fed 官方口徑的通膨壓力沒惡化。利率端應見短天期殖利率下行、年內降息機率上修；美股受益於折現率下修，長天期成長股與小型股相對強。但 3% 距 2% 仍遠，這是「不阻礙降息」而非「催促降息」，別過度外推。\n\n③ 台股傳導走匯率與資金：美元走弱、新台幣壓力緩解，外資回補意願上升，利多半導體與權值股評價面。留意月底同週數據疊加，若當日有製造業或就業數據同步公布，須拆分歸因，別把漲幅全記在 PCE 上。",
    "analyzed_at": "2026-09-30T12:39:12+00:00"
@@ -902,7 +902,7 @@
   "us_pce|Core PCE Price Index YoY|2026-08": {
    "indicator": "us_pce",
    "ref": "2026-08",
-   "title": "Core PCE Price Index YoY（Aug）",
+   "title": "Core PCE Price Index YoY（Aug. 2026）",
    "date_tw": "2026-09-30 20:30",
    "sort_key": "2026-09-30T20:30:00+08:00",
    "forecast": "3.3%",
@@ -919,14 +919,14 @@
   "us_claims|Initial Jobless Claims|2026-09-26": {
    "indicator": "us_claims",
    "ref": "2026-09-26",
-   "title": "Initial Jobless Claims（Sep/26）",
+   "title": "Initial Jobless Claims（w/o Sep. 21, 2026）",
    "date_tw": "2026-10-01 20:30",
    "sort_key": "2026-10-01T20:30:00+08:00",
    "forecast": "200K",
    "previous": "198K",
-   "actual": "197K",
+   "actual": "199K",
    "surprise": {
-    "delta": "-3K",
+    "delta": "-1K",
     "verdict": "below",
     "good": true
    }
@@ -934,7 +934,7 @@
   "us_ism|ISM Manufacturing PMI|2026-09": {
    "indicator": "us_ism",
    "ref": "2026-09",
-   "title": "ISM Manufacturing PMI（Sep）",
+   "title": "ISM Manufacturing PMI（Sep. 2026）",
    "date_tw": "2026-10-01 22:00",
    "sort_key": "2026-10-01T22:00:00+08:00",
    "forecast": "55",
@@ -963,7 +963,7 @@
   "us_nfp|Average Hourly Earnings MoM|2026-09": {
    "indicator": "us_nfp",
    "ref": "2026-09",
-   "title": "Average Hourly Earnings MoM（Sep）",
+   "title": "Average Hourly Earnings MoM（Sep. 2026）",
    "date_tw": "2026-10-02 20:30",
    "sort_key": "2026-10-02T20:30:00+08:00",
    "forecast": "0.3%",
@@ -980,7 +980,7 @@
   "us_nfp|Unemployment Rate|2026-09": {
    "indicator": "us_nfp",
    "ref": "2026-09",
-   "title": "Unemployment Rate（Sep）",
+   "title": "Unemployment Rate（Sep. 2026）",
    "date_tw": "2026-10-02 20:30",
    "sort_key": "2026-10-02T20:30:00+08:00",
    "forecast": "4.1%",
@@ -997,7 +997,7 @@
   "us_nfp|Non Farm Payrolls|2026-09": {
    "indicator": "us_nfp",
    "ref": "2026-09",
-   "title": "Non Farm Payrolls（Sep）",
+   "title": "Non Farm Payrolls（Sep. 2026）",
    "date_tw": "2026-10-02 20:30",
    "sort_key": "2026-10-02T20:30:00+08:00",
    "forecast": "90K",
@@ -1025,27 +1025,31 @@
   "tw_exports|Exports YoY|2026-09": {
    "indicator": "tw_exports",
    "ref": "2026-09",
-   "title": "Exports YoY（Sep）",
+   "title": "Exports YoY（Sep. 2026）",
    "date_tw": "2026-10-08 16:00",
    "sort_key": "2026-10-08T16:00:00+08:00",
-   "forecast": "",
+   "forecast": "45.65%",
    "previous": "41%",
    "actual": "60.9%",
-   "surprise": null,
+   "surprise": {
+    "delta": "+15.25",
+    "verdict": "above",
+    "good": true
+   },
    "ai_analysis": "**9 月出口年增 60.9%，較前值 41% 再加速近 20pp，AI 供應鏈出貨強度超出趨勢延伸，台股 EPS 上修動能延續。**\n\n沒有市場預期，以前值比較。增速從 41% 跳到 60.9%，而且去年同期基期已高（2025 年下半年 AI 伺服器出貨就已放量），代表這次不是低基期造成的數字，而是實際出貨量在擴張。細項還沒拆開，有效訊號要看資通訊（伺服器）和電子零組件（先進製程、封裝）是否同步加速。如果主要是資通訊在推升，代表 AI 伺服器組裝的節奏仍在加快。\n\n對美國利率預期幾乎沒有影響，台灣出口不是 Fed 的決策變數。它的作用在於驗證美系雲端大廠的 AI 資本支出確實轉化為硬體採購，可以支撐美股半導體與 AI 硬體鏈的獲利預期，削弱「資本支出見頂」的說法。對 NVDA、AVGO 等上游的季報屬於偏正面的先行訊號。\n\n台股是直接受惠方。台積電與鴻海、廣達、緯創等伺服器代工廠的營收預期有上修空間，加權指數 EPS 共識可能跟著上調。需要留意兩點。第一，出口強勁加上外資匯入，新台幣有升值壓力，美元計價年增率和新台幣計價的成長會出現落差，對出口商毛利有匯兌侵蝕。第二（推測）：增速已經偏高，若後續月份放緩，市場可能提前交易「成長率見頂」，評價擴張的空間會比 EPS 上修的空間小。",
    "analyzed_at": "2026-10-08T10:39:12+00:00"
   },
   "us_claims|Initial Jobless Claims|2026-10-03": {
    "indicator": "us_claims",
    "ref": "2026-10-03",
-   "title": "Initial Jobless Claims（Oct/03）",
+   "title": "Initial Jobless Claims（w/o Sep. 28, 2026）",
    "date_tw": "2026-10-08 20:30",
    "sort_key": "2026-10-08T20:30:00+08:00",
    "forecast": "200K",
    "previous": "199K",
-   "actual": "197K",
+   "actual": "198K",
    "surprise": {
-    "delta": "-3K",
+    "delta": "-2K",
     "verdict": "below",
     "good": true
    }
@@ -1053,7 +1057,7 @@
   "us_cpi|Core Inflation Rate MoM|2026-09": {
    "indicator": "us_cpi",
    "ref": "2026-09",
-   "title": "Core Inflation Rate MoM（Sep）",
+   "title": "Core Inflation Rate MoM（Sep. 2026）",
    "date_tw": "2026-10-14 20:30",
    "sort_key": "2026-10-14T20:30:00+08:00",
    "forecast": "0.2%",
@@ -1070,7 +1074,7 @@
   "us_cpi|Core Inflation Rate YoY|2026-09": {
    "indicator": "us_cpi",
    "ref": "2026-09",
-   "title": "Core Inflation Rate YoY（Sep）",
+   "title": "Core Inflation Rate YoY（Sep. 2026）",
    "date_tw": "2026-10-14 20:30",
    "sort_key": "2026-10-14T20:30:00+08:00",
    "forecast": "2.5%",
@@ -1087,7 +1091,7 @@
   "us_cpi|Inflation Rate YoY|2026-09": {
    "indicator": "us_cpi",
    "ref": "2026-09",
-   "title": "Inflation Rate YoY（Sep）",
+   "title": "Inflation Rate YoY（Sep. 2026）",
    "date_tw": "2026-10-14 20:30",
    "sort_key": "2026-10-14T20:30:00+08:00",
    "forecast": "3.6%",
@@ -1104,7 +1108,7 @@
   "us_cpi|Inflation Rate MoM|2026-09": {
    "indicator": "us_cpi",
    "ref": "2026-09",
-   "title": "Inflation Rate MoM（Sep）",
+   "title": "Inflation Rate MoM（Sep. 2026）",
    "date_tw": "2026-10-14 20:30",
    "sort_key": "2026-10-14T20:30:00+08:00",
    "forecast": "0.6%",
@@ -1121,29 +1125,29 @@
   "us_claims|Initial Jobless Claims|2026-10-10": {
    "indicator": "us_claims",
    "ref": "2026-10-10",
-   "title": "Initial Jobless Claims（Oct/10）",
+   "title": "Initial Jobless Claims（w/o Oct. 5, 2026）",
    "date_tw": "2026-10-15 20:30",
    "sort_key": "2026-10-15T20:30:00+08:00",
    "forecast": "200K",
    "previous": "198K",
-   "actual": "199K",
+   "actual": "200K",
    "surprise": {
-    "delta": "-1K",
-    "verdict": "below",
-    "good": true
+    "delta": "+0K",
+    "verdict": "inline",
+    "good": null
    }
   },
   "us_claims|Initial Jobless Claims|2026-10-17": {
    "indicator": "us_claims",
    "ref": "2026-10-17",
-   "title": "Initial Jobless Claims（Oct/17）",
+   "title": "Initial Jobless Claims（w/o Oct. 12, 2026）",
    "date_tw": "2026-10-22 20:30",
    "sort_key": "2026-10-22T20:30:00+08:00",
    "forecast": "200K",
    "previous": "200K",
-   "actual": "194K",
+   "actual": "195K",
    "surprise": {
-    "delta": "-6K",
+    "delta": "-5K",
     "verdict": "below",
     "good": true
    }
@@ -1179,7 +1183,7 @@
   "us_claims|Initial Jobless Claims|2026-10-24": {
    "indicator": "us_claims",
    "ref": "2026-10-24",
-   "title": "Initial Jobless Claims（Oct/24）",
+   "title": "Initial Jobless Claims（w/o Oct. 19, 2026）",
    "date_tw": "2026-10-29 20:30",
    "sort_key": "2026-10-29T20:30:00+08:00",
    "forecast": "199K",
@@ -1194,7 +1198,7 @@
   "us_pce|Core PCE Price Index YoY|2026-09": {
    "indicator": "us_pce",
    "ref": "2026-09",
-   "title": "Core PCE Price Index YoY（Sep）",
+   "title": "Core PCE Price Index YoY（Sep. 2026）",
    "date_tw": "2026-10-29 20:30",
    "sort_key": "2026-10-29T20:30:00+08:00",
    "forecast": "3.1%",
@@ -1211,7 +1215,7 @@
   "us_pce|Core PCE Price Index MoM|2026-09": {
    "indicator": "us_pce",
    "ref": "2026-09",
-   "title": "Core PCE Price Index MoM（Sep）",
+   "title": "Core PCE Price Index MoM（Sep. 2026）",
    "date_tw": "2026-10-29 20:30",
    "sort_key": "2026-10-29T20:30:00+08:00",
    "forecast": "0.3%",
@@ -1240,14 +1244,14 @@
   "us_ism|ISM Manufacturing PMI|2026-10": {
    "indicator": "us_ism",
    "ref": "2026-10",
-   "title": "ISM Manufacturing PMI（Oct）",
+   "title": "ISM Manufacturing PMI（Oct. 2026）",
    "date_tw": "2026-11-02 23:00",
    "sort_key": "2026-11-02T23:00:00+08:00",
-   "forecast": "54.6",
+   "forecast": "54.5",
    "previous": "54.5",
    "actual": "55.5",
    "surprise": {
-    "delta": "+0.9",
+    "delta": "+1",
     "verdict": "above",
     "good": true
    },
@@ -1257,10 +1261,10 @@
   "us_claims|Initial Jobless Claims|2026-10-31": {
    "indicator": "us_claims",
    "ref": "2026-10-31",
-   "title": "Initial Jobless Claims（Oct/31）",
+   "title": "Initial Jobless Claims（w/o Oct. 26, 2026）",
    "date_tw": "2026-11-05 21:30",
    "sort_key": "2026-11-05T21:30:00+08:00",
-   "forecast": "195K",
+   "forecast": "196K",
    "previous": "194K",
    "actual": "",
    "surprise": null
@@ -1268,7 +1272,7 @@
   "us_nfp|Non Farm Payrolls|2026-10": {
    "indicator": "us_nfp",
    "ref": "2026-10",
-   "title": "Non Farm Payrolls（Oct）",
+   "title": "Non Farm Payrolls（Oct. 2026）",
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
    "forecast": "65K",
@@ -1279,7 +1283,7 @@
   "us_nfp|Average Hourly Earnings MoM|2026-10": {
    "indicator": "us_nfp",
    "ref": "2026-10",
-   "title": "Average Hourly Earnings MoM（Oct）",
+   "title": "Average Hourly Earnings MoM（Oct. 2026）",
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
    "forecast": "0.3%",
@@ -1290,7 +1294,7 @@
   "us_nfp|Unemployment Rate|2026-10": {
    "indicator": "us_nfp",
    "ref": "2026-10",
-   "title": "Unemployment Rate（Oct）",
+   "title": "Unemployment Rate（Oct. 2026）",
    "date_tw": "2026-11-06 21:30",
    "sort_key": "2026-11-06T21:30:00+08:00",
    "forecast": "4.2%",
@@ -1301,62 +1305,62 @@
   "tw_exports|Exports YoY|2026-10": {
    "indicator": "tw_exports",
    "ref": "2026-10",
-   "title": "Exports YoY（Oct）",
+   "title": "Exports YoY（Oct. 2026）",
    "date_tw": "2026-11-09 16:00",
    "sort_key": "2026-11-09T16:00:00+08:00",
    "forecast": "",
-   "previous": "60.9",
+   "previous": "60.9%",
    "actual": "",
    "surprise": null
   },
   "us_cpi|Core Inflation Rate MoM|2026-10": {
    "indicator": "us_cpi",
    "ref": "2026-10",
-   "title": "Core Inflation Rate MoM（Oct）",
+   "title": "Core Inflation Rate MoM（Oct. 2026）",
    "date_tw": "2026-11-10 21:30",
    "sort_key": "2026-11-10T21:30:00+08:00",
-   "forecast": "",
-   "previous": "0.3",
+   "forecast": "0.2%",
+   "previous": "0.3%",
    "actual": "",
    "surprise": null
   },
   "us_cpi|Inflation Rate MoM|2026-10": {
    "indicator": "us_cpi",
    "ref": "2026-10",
-   "title": "Inflation Rate MoM（Oct）",
+   "title": "Inflation Rate MoM（Oct. 2026）",
    "date_tw": "2026-11-10 21:30",
    "sort_key": "2026-11-10T21:30:00+08:00",
-   "forecast": "",
-   "previous": "0.6",
+   "forecast": "0.3%",
+   "previous": "0.6%",
    "actual": "",
    "surprise": null
   },
   "us_cpi|Inflation Rate YoY|2026-10": {
    "indicator": "us_cpi",
    "ref": "2026-10",
-   "title": "Inflation Rate YoY（Oct）",
+   "title": "Inflation Rate YoY（Oct. 2026）",
    "date_tw": "2026-11-10 21:30",
    "sort_key": "2026-11-10T21:30:00+08:00",
    "forecast": "",
-   "previous": "3.7",
+   "previous": "3.7%",
    "actual": "",
    "surprise": null
   },
   "us_cpi|Core Inflation Rate YoY|2026-10": {
    "indicator": "us_cpi",
    "ref": "2026-10",
-   "title": "Core Inflation Rate YoY（Oct）",
+   "title": "Core Inflation Rate YoY（Oct. 2026）",
    "date_tw": "2026-11-10 21:30",
    "sort_key": "2026-11-10T21:30:00+08:00",
    "forecast": "",
-   "previous": "2.6",
+   "previous": "2.6%",
    "actual": "",
    "surprise": null
   },
   "us_claims|Initial Jobless Claims|2026-11-07": {
    "indicator": "us_claims",
    "ref": "2026-11-07",
-   "title": "Initial Jobless Claims（Nov/07）",
+   "title": "Initial Jobless Claims（w/o Nov. 2, 2026）",
    "date_tw": "2026-11-12 21:30",
    "sort_key": "2026-11-12T21:30:00+08:00",
    "forecast": "",
@@ -1378,7 +1382,7 @@
   "us_claims|Initial Jobless Claims|2026-11-14": {
    "indicator": "us_claims",
    "ref": "2026-11-14",
-   "title": "Initial Jobless Claims（Nov/14）",
+   "title": "Initial Jobless Claims（w/o Nov. 9, 2026）",
    "date_tw": "2026-11-19 21:30",
    "sort_key": "2026-11-19T21:30:00+08:00",
    "forecast": "",
