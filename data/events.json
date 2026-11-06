@@ -1188,9 +1188,9 @@
    "sort_key": "2026-10-29T20:30:00+08:00",
    "forecast": "199K",
    "previous": "195K",
-   "actual": "194K",
+   "actual": "195K",
    "surprise": {
-    "delta": "-5K",
+    "delta": "-4K",
     "verdict": "below",
     "good": true
    }
