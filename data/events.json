@@ -1462,6 +1462,17 @@
    "previous": "",
    "actual": "",
    "surprise": null
+  },
+  "us_ism|ISM Manufacturing PMI|2026-11": {
+   "indicator": "us_ism",
+   "ref": "2026-11",
+   "title": "ISM Manufacturing PMI（Nov. 2026）",
+   "date_tw": "2026-12-01 23:00",
+   "sort_key": "2026-12-01T23:00:00+08:00",
+   "forecast": "",
+   "previous": "55.5",
+   "actual": "",
+   "surprise": null
   }
  }
 }
