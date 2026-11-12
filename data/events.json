@@ -1404,9 +1404,13 @@
    "date_tw": "2026-11-12 21:30",
    "sort_key": "2026-11-12T21:30:00+08:00",
    "forecast": "195K",
-   "previous": "189K",
-   "actual": "",
-   "surprise": null
+   "previous": "191K",
+   "actual": "200K",
+   "surprise": {
+    "delta": "+5K",
+    "verdict": "above",
+    "good": false
+   }
   },
   "us_fomc|FOMC Minutes|2026-11-19": {
    "indicator": "us_fomc",
@@ -1426,7 +1430,7 @@
    "date_tw": "2026-11-19 21:30",
    "sort_key": "2026-11-19T21:30:00+08:00",
    "forecast": "",
-   "previous": "",
+   "previous": "200K",
    "actual": "",
    "surprise": null
   },
