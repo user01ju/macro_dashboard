@@ -1429,7 +1429,7 @@
    "title": "Initial Jobless Claims（w/o Nov. 9, 2026）",
    "date_tw": "2026-11-19 21:30",
    "sort_key": "2026-11-19T21:30:00+08:00",
-   "forecast": "196K",
+   "forecast": "197K",
    "previous": "200K",
    "actual": "",
    "surprise": null
@@ -1440,7 +1440,7 @@
    "title": "Core PCE Price Index YoY（Oct. 2026）",
    "date_tw": "2026-11-25 21:30",
    "sort_key": "2026-11-25T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "3.2%",
    "previous": "3.1%",
    "actual": "",
    "surprise": null
@@ -1451,7 +1451,7 @@
    "title": "Core PCE Price Index MoM（Oct. 2026）",
    "date_tw": "2026-11-25 21:30",
    "sort_key": "2026-11-25T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.3%",
    "previous": "0.3%",
    "actual": "",
    "surprise": null
