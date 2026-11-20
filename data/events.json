@@ -1379,8 +1379,8 @@
    "indicator": "us_cpi",
    "ref": "2026-10",
    "title": "Inflation Rate YoY（Oct. 2026）",
-   "date_tw": "2026-11-10 21:30",
-   "sort_key": "2026-11-10T21:30:00+08:00",
+   "date_tw": "2026-12-10 21:30",
+   "sort_key": "2026-12-10T21:30:00+08:00",
    "forecast": "3.9%",
    "previous": "3.7%",
    "actual": "",
@@ -1390,9 +1390,9 @@
    "indicator": "us_cpi",
    "ref": "2026-10",
    "title": "Core Inflation Rate YoY（Oct. 2026）",
-   "date_tw": "2026-11-10 21:30",
-   "sort_key": "2026-11-10T21:30:00+08:00",
-   "forecast": "2.8%",
+   "date_tw": "2026-12-10 21:30",
+   "sort_key": "2026-12-10T21:30:00+08:00",
+   "forecast": "2.7%",
    "previous": "2.6%",
    "actual": "",
    "surprise": null
@@ -1546,6 +1546,39 @@
    "sort_key": "2026-12-09T16:00:00+08:00",
    "forecast": "",
    "previous": "58.9%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Core Inflation Rate MoM|2026-11": {
+   "indicator": "us_cpi",
+   "ref": "2026-11",
+   "title": "Core Inflation Rate MoM（Nov. 2026）",
+   "date_tw": "2026-12-10 21:30",
+   "sort_key": "2026-12-10T21:30:00+08:00",
+   "forecast": "",
+   "previous": "0.3%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Inflation Rate MoM|2026-11": {
+   "indicator": "us_cpi",
+   "ref": "2026-11",
+   "title": "Inflation Rate MoM（Nov. 2026）",
+   "date_tw": "2026-12-10 21:30",
+   "sort_key": "2026-12-10T21:30:00+08:00",
+   "forecast": "",
+   "previous": "0.4%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-12-05": {
+   "indicator": "us_claims",
+   "ref": "2026-12-05",
+   "title": "Initial Jobless Claims（w/o Nov. 30, 2026）",
+   "date_tw": "2026-12-10 21:30",
+   "sort_key": "2026-12-10T21:30:00+08:00",
+   "forecast": "",
+   "previous": "",
    "actual": "",
    "surprise": null
   }
