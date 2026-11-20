@@ -1466,7 +1466,7 @@
    "title": "Initial Jobless Claims（w/o Nov. 16, 2026）",
    "date_tw": "2026-11-25 21:30",
    "sort_key": "2026-11-25T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "200K",
    "previous": "203K",
    "actual": "",
    "surprise": null
@@ -1511,7 +1511,7 @@
    "title": "Average Hourly Earnings MoM（Nov. 2026）",
    "date_tw": "2026-12-04 21:30",
    "sort_key": "2026-12-04T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "0.3%",
    "previous": "0.4%",
    "actual": "",
    "surprise": null
@@ -1522,7 +1522,7 @@
    "title": "Non Farm Payrolls（Nov. 2026）",
    "date_tw": "2026-12-04 21:30",
    "sort_key": "2026-12-04T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "93K",
    "previous": "165K",
    "actual": "",
    "surprise": null
@@ -1533,7 +1533,7 @@
    "title": "Unemployment Rate（Nov. 2026）",
    "date_tw": "2026-12-04 21:30",
    "sort_key": "2026-12-04T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "4.1%",
    "previous": "4.1%",
    "actual": "",
    "surprise": null
@@ -1579,6 +1579,28 @@
    "sort_key": "2026-12-10T21:30:00+08:00",
    "forecast": "",
    "previous": "",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Core Inflation Rate YoY|2026-11": {
+   "indicator": "us_cpi",
+   "ref": "2026-11",
+   "title": "Core Inflation Rate YoY（Nov. 2026）",
+   "date_tw": "2026-12-10 21:30",
+   "sort_key": "2026-12-10T21:30:00+08:00",
+   "forecast": "2.7%",
+   "previous": "2.6%",
+   "actual": "",
+   "surprise": null
+  },
+  "us_cpi|Inflation Rate YoY|2026-11": {
+   "indicator": "us_cpi",
+   "ref": "2026-11",
+   "title": "Inflation Rate YoY（Nov. 2026）",
+   "date_tw": "2026-12-10 21:30",
+   "sort_key": "2026-12-10T21:30:00+08:00",
+   "forecast": "3.9%",
+   "previous": "3.7%",
    "actual": "",
    "surprise": null
   }
