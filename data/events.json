@@ -1477,7 +1477,7 @@
    "title": "ISM Manufacturing PMI（Nov. 2026）",
    "date_tw": "2026-12-01 23:00",
    "sort_key": "2026-12-01T23:00:00+08:00",
-   "forecast": "",
+   "forecast": "55.2",
    "previous": "55.5",
    "actual": "",
    "surprise": null
@@ -1522,7 +1522,7 @@
    "title": "Non Farm Payrolls（Nov. 2026）",
    "date_tw": "2026-12-04 21:30",
    "sort_key": "2026-12-04T21:30:00+08:00",
-   "forecast": "93K",
+   "forecast": "90K",
    "previous": "165K",
    "actual": "",
    "surprise": null
