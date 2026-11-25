@@ -1431,9 +1431,9 @@
    "sort_key": "2026-11-19T21:30:00+08:00",
    "forecast": "197K",
    "previous": "202K",
-   "actual": "203K",
+   "actual": "202K",
    "surprise": {
-    "delta": "+6K",
+    "delta": "+5K",
     "verdict": "above",
     "good": false
    }
@@ -1446,8 +1446,14 @@
    "sort_key": "2026-11-25T21:30:00+08:00",
    "forecast": "3.2%",
    "previous": "3.1%",
-   "actual": "",
-   "surprise": null
+   "actual": "3.3%",
+   "surprise": {
+    "delta": "+0.1",
+    "verdict": "above",
+    "good": false
+   },
+   "ai_analysis": "**核心 MoM 符合預期，YoY 偏高主要是基期效應；CPI 已大致定價，屬「九成冷淡」的那種日子，但通膨黏著的事實沒變。**\n\n唯一重點 Core MoM 0.3% 持平預期與前值，CPI→PCE 映射沒有獨立意外。YoY 3.3% 高於預期 0.1pp，但在 MoM 符合下，多半來自去年同期低基期，或前幾月上修疊加四捨五入（*推測，需核對修正值*），不算新增通膨訊號。真正值得注意的是 MoM 連續停在 0.3%，年化約 3.6%，離 2% 目標很遠，而且沒有下行趨勢。\n\n數據本身不足以重新定價，預期利率路徑與殖利率反應應偏小。中期來看，0.3% 的月增持續黏著，會壓縮 Fed 降息空間，偏鷹的尾部風險還在，對高估值成長股是慢性壓力。由於月底公布常與 GDP、初領等數據疊在同一天，當日盤面波動不宜歸因於 PCE。\n\n對台股的直接傳導有限。間接管道是美債殖利率與美元：若市場因 YoY 標題數字略偏鷹，可能小幅壓抑半導體與 AI 供應鏈的評價、推升新台幣貶值壓力（*推測*），但影響應不及同週其他數據或科技股財報。",
+   "analyzed_at": "2026-11-25T19:20:01+00:00"
   },
   "us_pce|Core PCE Price Index MoM|2026-10": {
    "indicator": "us_pce",
@@ -1457,8 +1463,14 @@
    "sort_key": "2026-11-25T21:30:00+08:00",
    "forecast": "0.3%",
    "previous": "0.3%",
-   "actual": "",
-   "surprise": null
+   "actual": "0.3%",
+   "surprise": {
+    "delta": "+0",
+    "verdict": "inline",
+    "good": null
+   },
+   "ai_analysis": "**核心 MoM 符合預期，YoY 偏高主要是基期效應；CPI 已大致定價，屬「九成冷淡」的那種日子，但通膨黏著的事實沒變。**\n\n唯一重點 Core MoM 0.3% 持平預期與前值，CPI→PCE 映射沒有獨立意外。YoY 3.3% 高於預期 0.1pp，但在 MoM 符合下，多半來自去年同期低基期，或前幾月上修疊加四捨五入（*推測，需核對修正值*），不算新增通膨訊號。真正值得注意的是 MoM 連續停在 0.3%，年化約 3.6%，離 2% 目標很遠，而且沒有下行趨勢。\n\n數據本身不足以重新定價，預期利率路徑與殖利率反應應偏小。中期來看，0.3% 的月增持續黏著，會壓縮 Fed 降息空間，偏鷹的尾部風險還在，對高估值成長股是慢性壓力。由於月底公布常與 GDP、初領等數據疊在同一天，當日盤面波動不宜歸因於 PCE。\n\n對台股的直接傳導有限。間接管道是美債殖利率與美元：若市場因 YoY 標題數字略偏鷹，可能小幅壓抑半導體與 AI 供應鏈的評價、推升新台幣貶值壓力（*推測*），但影響應不及同週其他數據或科技股財報。",
+   "analyzed_at": "2026-11-25T19:20:01+00:00"
   },
   "us_claims|Initial Jobless Claims|2026-11-21": {
    "indicator": "us_claims",
@@ -1467,9 +1479,13 @@
    "date_tw": "2026-11-25 21:30",
    "sort_key": "2026-11-25T21:30:00+08:00",
    "forecast": "200K",
-   "previous": "203K",
-   "actual": "",
-   "surprise": null
+   "previous": "202K",
+   "actual": "189K",
+   "surprise": {
+    "delta": "-11K",
+    "verdict": "below",
+    "good": true
+   }
   },
   "us_ism|ISM Manufacturing PMI|2026-11": {
    "indicator": "us_ism",
@@ -1501,7 +1517,7 @@
    "date_tw": "2026-12-03 21:30",
    "sort_key": "2026-12-03T21:30:00+08:00",
    "forecast": "",
-   "previous": "",
+   "previous": "189K",
    "actual": "",
    "surprise": null
   },
