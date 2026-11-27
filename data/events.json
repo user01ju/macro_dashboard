@@ -1493,7 +1493,7 @@
    "title": "ISM Manufacturing PMI（Nov. 2026）",
    "date_tw": "2026-12-01 23:00",
    "sort_key": "2026-12-01T23:00:00+08:00",
-   "forecast": "55.2",
+   "forecast": "55",
    "previous": "55.5",
    "actual": "",
    "surprise": null
@@ -1516,7 +1516,7 @@
    "title": "Initial Jobless Claims（w/o Nov. 23, 2026）",
    "date_tw": "2026-12-03 21:30",
    "sort_key": "2026-12-03T21:30:00+08:00",
-   "forecast": "",
+   "forecast": "195K",
    "previous": "189K",
    "actual": "",
    "surprise": null
