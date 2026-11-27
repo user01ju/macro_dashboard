@@ -1619,6 +1619,17 @@
    "previous": "3.7%",
    "actual": "",
    "surprise": null
+  },
+  "us_claims|Initial Jobless Claims|2026-12-12": {
+   "indicator": "us_claims",
+   "ref": "2026-12-12",
+   "title": "Initial Jobless Claims（w/o Dec. 7, 2026）",
+   "date_tw": "2026-12-17 21:30",
+   "sort_key": "2026-12-17T21:30:00+08:00",
+   "forecast": "",
+   "previous": "",
+   "actual": "",
+   "surprise": null
   }
  }
 }
